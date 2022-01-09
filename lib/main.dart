@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:alquinet/screens/home_screen.dart';
 import 'package:alquinet/screens/log_clients_screen.dart';
 import 'package:alquinet/screens/log_lessee_screen.dart';
@@ -81,7 +79,7 @@ class _MainScreenState extends State<MainScreen>
     screenWidth = size.width;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF5F5F6F),
+      backgroundColor: const Color(0x5F2A3B5F),
       body: Stack(
         children: <Widget>[menu(context), screens(context)],
       ),
@@ -95,75 +93,154 @@ class _MainScreenState extends State<MainScreen>
         scale: _menuScaleAnimation,
         child: Padding(
           padding: const EdgeInsets.only(left: 16.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      _onitemTapped(0);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  child: Image.asset(
-                                      'assets/images/alquinet_logo.jpeg'),
-                                ),
-                              ],
+          child: ListView(
+            padding: const EdgeInsets.symmetric(vertical: 150.0),
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    _onitemTapped(0);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 100.0,
+                                height: 100.0,
+                                child: Image.asset(
+                                    'assets/images/alquinet_logo.jpeg'),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            widget.title,
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18.0),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(1);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.account_box_outlined,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Log clients',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(2);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.account_box_outlined,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Log lessee',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(3);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.house_outlined,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Log rental housing',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: SizedBox(
+                  width: 250.0,
+                  height: 100.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        child: Row(
+                          children: const <Widget>[
+                            Icon(
+                              Icons.logout,
+                              color: Colors.white,
                             ),
                             Text(
-                              widget.title,
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 18.0),
+                              'logout',
+                              style: TextStyle(color: Colors.white),
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                      GestureDetector(
+                        child: Row(
+                          children: const <Widget>[
+                            Icon(
+                              Icons.login,
+                              color: Colors.white,
+                            ),
+                            Text(
+                              'login',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    _onitemTapped(1);
-                  },
-                  child: const Text(
-                    'Log clients',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _onitemTapped(2);
-                  },
-                  child: const Text(
-                    'Log lessee',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _onitemTapped(3);
-                  },
-                  child: const Text('Log rental housing',
-                      style: TextStyle(color: Colors.white),
-                      textAlign: TextAlign.start),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -175,8 +252,8 @@ class _MainScreenState extends State<MainScreen>
       duration: duration,
       top: 0,
       bottom: 0,
-      left: isCollapsed ? 0 : 0.6 * screenWidth,
-      right: isCollapsed ? 0 : -0.2 * screenWidth,
+      left: isCollapsed ? 0 : 0.8 * screenWidth,
+      right: isCollapsed ? 0 : -0.8 * screenWidth,
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Material(
@@ -210,9 +287,11 @@ class _MainScreenState extends State<MainScreen>
                           });
                         },
                       ),
-                      Text(widget.title,
-                          style: const TextStyle(
-                              fontSize: 24, color: Colors.black)),
+                      Text(
+                        widget.title,
+                        style:
+                            const TextStyle(fontSize: 24, color: Colors.black),
+                      ),
                       const Icon(Icons.settings, color: Colors.white),
                     ],
                   ),
