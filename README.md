@@ -1,4 +1,4 @@
-# alquinet
+# ALQUINET
 
 A new Flutter project.
 
