@@ -79,7 +79,7 @@ class _MainScreenState extends State<MainScreen>
     screenWidth = size.width;
 
     return Scaffold(
-      backgroundColor: const Color(0x5F2A3B5F),
+      backgroundColor: const Color(0x4F2A3B5F),
       body: Stack(
         children: <Widget>[menu(context), screens(context)],
       ),
@@ -119,10 +119,13 @@ class _MainScreenState extends State<MainScreen>
                               ),
                             ],
                           ),
-                          Text(
-                            widget.title,
-                            style: const TextStyle(
-                                color: Colors.white, fontSize: 18.0),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20.0),
+                            child: Text(
+                              widget.title,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 18.0),
+                            ),
                           ),
                         ],
                       ),
@@ -267,33 +270,37 @@ class _MainScreenState extends State<MainScreen>
             scrollDirection: Axis.vertical,
             physics: const ClampingScrollPhysics(),
             child: Container(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 48),
+              padding: const EdgeInsets.only(left: 0, right: 0, top: 48),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      InkWell(
-                        child: const Icon(Icons.menu, color: Colors.black),
-                        onTap: () {
-                          setState(() {
-                            isCollapsed
-                                ? _controller.forward()
-                                : _controller.reverse();
+                  Container(
+                    padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+                    decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        InkWell(
+                          child: const Icon(Icons.menu, color: Colors.white),
+                          onTap: () {
+                            setState(() {
+                              isCollapsed
+                                  ? _controller.forward()
+                                  : _controller.reverse();
 
-                            isCollapsed = !isCollapsed;
-                          });
-                        },
-                      ),
-                      Text(
-                        widget.title,
-                        style:
-                            const TextStyle(fontSize: 24, color: Colors.black),
-                      ),
-                      const Icon(Icons.settings, color: Colors.white),
-                    ],
+                              isCollapsed = !isCollapsed;
+                            });
+                          },
+                        ),
+                        Text(
+                          widget.title,
+                          style: const TextStyle(
+                              fontSize: 24, color: Colors.white),
+                        ),
+                        const Icon(Icons.settings, color: Colors.white),
+                      ],
+                    ),
                   ),
                   _widgeteOptions[_selectedIndex]
                 ],
