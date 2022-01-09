@@ -3,6 +3,7 @@ import 'package:alquinet/screens/log_clients_screen.dart';
 import 'package:alquinet/screens/log_lessee_screen.dart';
 import 'package:alquinet/screens/rental_housing_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:alquinet/screens/administrations_scren.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +38,7 @@ class _MainScreenState extends State<MainScreen>
     LogClients(),
     LogLesseeScreen(),
     RentalHousingScreen(),
+    Administration()
   ];
   int _selectedIndex = 0;
   late bool isCollapsed = true;
@@ -202,6 +204,29 @@ class _MainScreenState extends State<MainScreen>
                   ),
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(4);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.admin_panel_settings,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Administracion',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
@@ -275,7 +300,8 @@ class _MainScreenState extends State<MainScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 16, right: 16, top: 10, bottom: 10),
                     decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
