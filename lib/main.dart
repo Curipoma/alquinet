@@ -1,11 +1,13 @@
+import 'package:alquinet/administracion/administration_screen.dart';
+import 'package:alquinet/administracion/pages/auth_page.dart';
 import 'package:alquinet/screens/home_screen.dart';
 import 'package:alquinet/screens/log_clients_screen.dart';
 import 'package:alquinet/screens/log_lessee_screen.dart';
 import 'package:alquinet/screens/rental_housing_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:alquinet/screens/administrations_scren.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -38,7 +40,6 @@ class _MainScreenState extends State<MainScreen>
     LogClients(),
     LogLesseeScreen(),
     RentalHousingScreen(),
-    Administration()
   ];
   int _selectedIndex = 0;
   late bool isCollapsed = true;
@@ -206,7 +207,10 @@ class _MainScreenState extends State<MainScreen>
               ),
               GestureDetector(
                 onTap: () {
-                  _onitemTapped(4);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Administration()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
