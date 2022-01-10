@@ -1,3 +1,4 @@
+import 'package:alquinet/screens/customer_tracking_screen.dart';
 import 'package:alquinet/screens/home_screen.dart';
 import 'package:alquinet/screens/log_clients_screen.dart';
 import 'package:alquinet/screens/log_lessee_screen.dart';
@@ -37,6 +38,7 @@ class _MainScreenState extends State<MainScreen>
     LogClients(),
     LogLesseeScreen(),
     RentalHousingScreen(),
+    CustomerTracking(),
   ];
   int _selectedIndex = 0;
   late bool isCollapsed = true;
@@ -202,6 +204,29 @@ class _MainScreenState extends State<MainScreen>
                   ),
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(4);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.question_answer,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Comentarios',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
@@ -275,7 +300,8 @@ class _MainScreenState extends State<MainScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 16, right: 16, top: 10, bottom: 10),
                     decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
