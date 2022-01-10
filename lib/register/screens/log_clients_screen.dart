@@ -7,4 +7,4 @@ class LogClients extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Text('Log clients screen :D');
   }
-}
+} 

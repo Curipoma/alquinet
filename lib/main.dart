@@ -1,7 +1,7 @@
-import 'package:alquinet/screens/home_screen.dart';
-import 'package:alquinet/screens/log_clients_screen.dart';
-import 'package:alquinet/screens/log_lessee_screen.dart';
-import 'package:alquinet/screens/rental_housing_screen.dart';
+import 'package:alquinet/register/screens/home_screen.dart';
+import 'package:alquinet/register/screens/log_clients_screen.dart';
+import 'package:alquinet/register/screens/log_lessee_screen.dart';
+import 'package:alquinet/register/screens/rental_housing_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -275,7 +275,8 @@ class _MainScreenState extends State<MainScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 16, right: 16, top: 10, bottom: 10),
                     decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
