@@ -52,7 +52,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                 horizontal: size.width * 0.015,
                               ),
                               child: Text(
-                                'Back',
+                                'Regresar',
                                 style: GoogleFonts.poppins(
                                   color: isDarkMode
                                       ? Colors.white
@@ -70,9 +70,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           left: size.width * 0.055,
                         ),
                         child: Align(
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment.topCenter,
                           child: Text(
-                            'Reset password',
+                            'Resetea tu contraseña',
                             style: GoogleFonts.poppins(
                               color: isDarkMode
                                   ? Colors.white
@@ -88,8 +88,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             horizontal: size.width * 0.055),
                         child: Align(
                           child: Text(
-                            "Forgot your password? That's okay, it happens to everyone!\nPlease provide your email to reset your password.",
-                            style: GoogleFonts.poppins(
+"¿Olvidaste tu contraseña? Está bien, ¡le pasa a todos!\nProporciona tu correo electrónico para restablecer tu contraseña.",                            style: GoogleFonts.poppins(
                               color:
                                   isDarkMode ? Colors.white54 : Colors.black54,
                               fontSize: size.height * 0.02,
@@ -99,14 +98,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                       Form(
                         child: buildTextField(
-                          "Email",
+                          "Ingrese el correo",
                           Icons.email_outlined,
                           false,
                           size,
                           (valuemail) {
                             if (valuemail.length < 5) {
                               buildSnackError(
-                                'Invalid email',
+                                'Correo invalido',
                                 context,
                                 size,
                               );
@@ -116,7 +115,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+.[a-zA-Z]+")
                                 .hasMatch(valuemail)) {
                               buildSnackError(
-                                'Invalid email',
+                                'Correo invalido',
                                 context,
                                 size,
                               );
@@ -130,13 +129,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       Padding(
                         padding: EdgeInsets.only(top: size.height * 0.025),
                         child: ButtonWidget(
-                            text: 'Send Instruction',
+                            text: 'Sigue las instrucciones',
                             backColor: isDarkMode
                                 ? [
                                     Colors.black,
                                     Colors.black,
                                   ]
-                                : const [Color(0xff92A3FD), Color(0xff9DCEFF)],
+                                : const [Colors.black, Colors.black],
                             textColor: const [
                               Colors.white,
                               Colors.white,
@@ -154,21 +153,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Login',
+                              'Alquinet',
                               style: GoogleFonts.poppins(
                                 color: isDarkMode ? Colors.white : Colors.black,
                                 fontSize: size.height * 0.045,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
-                              '+',
-                              style: GoogleFonts.poppins(
-                                color: const Color(0xff3b22a1),
-                                fontSize: size.height * 0.06,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                           
                           ],
                         ),
                       ),

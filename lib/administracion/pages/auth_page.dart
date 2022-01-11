@@ -50,7 +50,7 @@ class _AuthPageState extends State<AuthPage> {
                         padding: EdgeInsets.only(top: size.height * 0.02),
                         child: Align(
                           child: Text(
-                            'Hey there,',
+                            'Hola,',
                             style: GoogleFonts.poppins(
                               color: isDarkMode
                                   ? Colors.white
@@ -65,7 +65,7 @@ class _AuthPageState extends State<AuthPage> {
                         child: Align(
                           child: register
                               ? Text(
-                                  'Create an Account',
+                                  'Crea tu nueva cuenta',
                                   style: GoogleFonts.poppins(
                                     color: isDarkMode
                                         ? Colors.white
@@ -75,7 +75,7 @@ class _AuthPageState extends State<AuthPage> {
                                   ),
                                 )
                               : Text(
-                                  'Welcome Back',
+                                  'Bienvenido',
                                   style: GoogleFonts.poppins(
                                     color: isDarkMode
                                         ? Colors.white
@@ -91,14 +91,14 @@ class _AuthPageState extends State<AuthPage> {
                       ),
                       register
                           ? buildTextField(
-                              "First Name",
+                              "Primero nombre",
                               Icons.person_outlined,
                               false,
                               size,
                               (valuename) {
                                 if (valuename.length <= 2) {
                                   buildSnackError(
-                                    'Invalid name',
+                                    'Nombre invalido',
                                     context,
                                     size,
                                   );
@@ -113,14 +113,14 @@ class _AuthPageState extends State<AuthPage> {
                           : Container(),
                       register
                           ? buildTextField(
-                              "Last Name",
+                              "Primer apellido",
                               Icons.person_outlined,
                               false,
                               size,
                               (valuesurname) {
                                 if (valuesurname.length <= 2) {
                                   buildSnackError(
-                                    'Invalid last name',
+                                    'Apellido invalido',
                                     context,
                                     size,
                                   );
@@ -135,14 +135,14 @@ class _AuthPageState extends State<AuthPage> {
                           : Container(),
                       Form(
                         child: buildTextField(
-                          "Email",
+                          "Ingrese un correo electronico",
                           Icons.email_outlined,
                           false,
                           size,
                           (valuemail) {
                             if (valuemail.length < 5) {
                               buildSnackError(
-                                'Invalid email',
+                                'Invalido correo',
                                 context,
                                 size,
                               );
@@ -152,7 +152,7 @@ class _AuthPageState extends State<AuthPage> {
                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+.[a-zA-Z]+")
                                 .hasMatch(valuemail)) {
                               buildSnackError(
-                                'Invalid email',
+                                'Invalido correo',
                                 context,
                                 size,
                               );
@@ -167,14 +167,14 @@ class _AuthPageState extends State<AuthPage> {
                       ),
                       Form(
                         child: buildTextField(
-                          "Passsword",
+                          "Ingrese una contraseña",
                           Icons.lock_outline,
                           true,
                           size,
                           (valuepassword) {
                             if (valuepassword.length < 6) {
                               buildSnackError(
-                                'Invalid password',
+                                'Clave no valida',
                                 context,
                                 size,
                               );
@@ -190,14 +190,14 @@ class _AuthPageState extends State<AuthPage> {
                       Form(
                         child: register
                             ? buildTextField(
-                                "Confirm Passsword",
+                                "Confirmar contraseña",
                                 Icons.lock_outline,
                                 true,
                                 size,
                                 (valuepassword) {
                                   if (valuepassword != textfieldsStrings[3]) {
                                     buildSnackError(
-                                      'Passwords must match',
+                                      'Las contraseñas no cooinciden',
                                       context,
                                       size,
                                     );
@@ -224,7 +224,7 @@ class _AuthPageState extends State<AuthPage> {
                                     children: [
                                       TextSpan(
                                         text:
-                                            "By creating an account, you agree to our ",
+                                            "Al crear una cuenta, usted acepta nuestras ",
                                         style: TextStyle(
                                           color: const Color(0xffADA4A5),
                                           fontSize: size.height * 0.015,
@@ -237,7 +237,7 @@ class _AuthPageState extends State<AuthPage> {
                                             print('Conditions of Use');
                                           },
                                           child: Text(
-                                            "Conditions of Use",
+                                            "Condiciones de Uso",
                                             style: TextStyle(
                                               color: const Color(0xffADA4A5),
                                               decoration:
@@ -248,7 +248,7 @@ class _AuthPageState extends State<AuthPage> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: " and ",
+                                        text: " y ",
                                         style: TextStyle(
                                           color: const Color(0xffADA4A5),
                                           fontSize: size.height * 0.015,
@@ -261,7 +261,7 @@ class _AuthPageState extends State<AuthPage> {
                                             print('Privacy Notice');
                                           },
                                           child: Text(
-                                            "Privacy Notice",
+                                            "Politicas de privacidad",
                                             style: TextStyle(
                                               color: const Color(0xffADA4A5),
                                               decoration:
@@ -294,7 +294,7 @@ class _AuthPageState extends State<AuthPage> {
                                   );
                                 },
                                 child: Text(
-                                  "Forgot your password?",
+                                  "Olvidaste tu contraseña?",
                                   style: TextStyle(
                                     color: const Color(0xffADA4A5),
                                     decoration: TextDecoration.underline,
@@ -309,13 +309,13 @@ class _AuthPageState extends State<AuthPage> {
                             ? EdgeInsets.only(top: size.height * 0.025)
                             : EdgeInsets.only(top: size.height * 0.085),
                         child: ButtonWidget(
-                          text: register ? "Register" : "Login",
+                          text: register ? "Registrarse" : "Login",
                           backColor: isDarkMode
                               ? [
                                   Colors.black,
                                   Colors.black,
                                 ]
-                              : const [Color(0xff92A3FD), Color(0xff9DCEFF)],
+                              : const [Colors.black, Colors.black],
                           textColor: const [
                             Colors.white,
                             Colors.white,
@@ -365,21 +365,14 @@ class _AuthPageState extends State<AuthPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Login',
+                              'Alquinet',
                               style: GoogleFonts.poppins(
                                 color: isDarkMode ? Colors.white : Colors.black,
                                 fontSize: size.height * 0.045,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
-                              '+',
-                              style: GoogleFonts.poppins(
-                                color: const Color(0xff3b22a1),
-                                fontSize: size.height * 0.06,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                           
                           ],
                         ),
                       ),
@@ -389,8 +382,8 @@ class _AuthPageState extends State<AuthPage> {
                           children: [
                             TextSpan(
                               text: register
-                                  ? "Already have an account? "
-                                  : "Don’t have an account yet? ",
+                                  ? "Ya tienes una cuenta? "
+                                  : "Aún no tienes una cuenta? ",
                               style: TextStyle(
                                 color: isDarkMode
                                     ? Colors.white
@@ -429,7 +422,7 @@ class _AuthPageState extends State<AuthPage> {
                                         ),
                                       )
                                     : Text(
-                                        "Register",
+                                        "Registro",
                                         style: TextStyle(
                                           foreground: Paint()
                                             ..shader = const LinearGradient(

@@ -7,9 +7,13 @@ class Administration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         appBar: AppBar(
-          title: const Text('Login'),
-        ),
+          
+          title: const Text('Alquinet'),
+          backgroundColor: Colors.black87,
+           ),
+        
         body: const AuthPage());
   }
 }
