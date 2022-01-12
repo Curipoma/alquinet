@@ -4,6 +4,8 @@ import 'package:alquinet/screens/log_lessee_screen.dart';
 import 'package:alquinet/screens/rental_housing_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'contratos/screens/home_screen_contratos.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -36,6 +38,7 @@ class _MainScreenState extends State<MainScreen>
     HomeScreen(),
     LogClients(),
     LogLesseeScreen(),
+    HomeScreenContratos(),
     RentalHousingScreen(),
   ];
   int _selectedIndex = 0;
@@ -188,6 +191,29 @@ class _MainScreenState extends State<MainScreen>
                   child: Row(
                     children: const [
                       Icon(
+                        Icons.account_box_outlined,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(
+                          'Contratos',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  _onitemTapped(4);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: const [
+                      Icon(
                         Icons.house_outlined,
                         color: Colors.white,
                       ),
@@ -275,7 +301,8 @@ class _MainScreenState extends State<MainScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 16, right: 16, top: 10, bottom: 10),
                     decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -288,7 +315,6 @@ class _MainScreenState extends State<MainScreen>
                               isCollapsed
                                   ? _controller.forward()
                                   : _controller.reverse();
-
                               isCollapsed = !isCollapsed;
                             });
                           },
