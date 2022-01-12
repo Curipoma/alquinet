@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import 'package:alquinet/administracion/administration_screen.dart';
 import 'package:alquinet/administracion/pages/auth_page.dart';
 import 'package:alquinet/screens/home_screen.dart';
 import 'package:alquinet/screens/log_clients_screen.dart';
 import 'package:alquinet/screens/log_lessee_screen.dart';
 import 'package:alquinet/screens/rental_housing_screen.dart';
+=======
+import 'package:alquinet/register/screens/home_screen.dart';
+import 'package:alquinet/register/screens/log_clients_screen.dart';
+import 'package:alquinet/register/screens/log_lessee_screen.dart';
+import 'package:alquinet/register/screens/rental_housing_screen.dart';
+>>>>>>> staging
 import 'package:flutter/material.dart';
 
 void main() async {
