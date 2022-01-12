@@ -5,6 +5,6 @@ class LogClients extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Log clients screen :D');
+    return const Text('Log clients screen :D ');
   }
-}
+} 
