@@ -361,7 +361,7 @@ class _AuthPageState extends State<AuthPage> {
                               : size.height * 0.15,
                         ),
                         child: Row(
-                          //TODO: replace text logo with your logo
+                          //TODO: replace text logo with your logos
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
@@ -372,7 +372,6 @@ class _AuthPageState extends State<AuthPage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                           
                           ],
                         ),
                       ),
