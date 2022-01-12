@@ -5,14 +5,27 @@ class HomeScreenContratos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: const EdgeInsets.all(15),
+      elevation: 10,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text('CONTRATO DE ARRIENDO\n\n',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
-          ),
-          Text(
+        children: <Widget>[
+          ListTile(
+              contentPadding: const EdgeInsets.fromLTRB(15, 10, 25, 0),
+              title: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('CONTRATO DE ARRIENDO\n\n',
+                        style: TextStyle(
+                        fontSize: 25, fontWeight: FontWeight.bold
+                      )
+                    ),
+                  ],
+                ),
+              ),
+              subtitle: const Text(
               'En la Ciudad de Quito Distrito Metropolitano, hoy Viernes 04 del mes de Septiembre del 2020, comparecen a la celebración del presente contrato de arrendamiento de conformidad con las siguientes clausulas.\n\n'
               'PRIMERA.- COMPARECIENTES.- Comparecen por una parte la Señora ______________________, con Cedula de Ciudadanía ______________________ ecuatoriana, de estado civil ______________________, por sus propios derechos a quien en adelante podrá denominárselo simplemente como el ARRENDADOR; por otra parte la Señora ______________________ con Cedula de Ciudadanía ______________________ ecuatoriana, de estado civil ______________________, por sus propios derechos a quien en adelante podrá denominársela simplemente como el ARRENDATARIO; legalmente capaces para contratar y obligarse, en forma libre y voluntaria convienen en celebrar el presente CONTRATO DE ARRIENDO, contenido en las siguientes clausulas y estipulaciones.\n\n'
               'SEGUNDA.- ANTECEDENTES.- El ARRENDADOR es legítimo propietario de un departamento de tres dormitorios de la primera planta dentro de la vivienda que se encuentra ubicada en la Calle Isla Rábida Oe5 - 327 e Isla Marchena, de la Cooperativa de Vivienda Salvador Celi, dentro del Distrito Metropolitano de Quito. Adquirido mediante escritura pública otorgada el 12 de Enero del 2010 ante la Notaria Vigésima Segunda del Cantón Quito Dr. Fabián Eduardo Solano Pazmiño e inscrita el 03 de Marzo 2010.\n\n'
@@ -28,11 +41,8 @@ class HomeScreenContratos extends StatelessWidget {
               ' Instalaciones de agua potable; tubería sanitaria, instalación de calefón\n\n'
               ' Cocina recubierto los pisos de baldosa, muebles bajos y altos\n\n'
               'Todo lo anotado en perfecto estado, así como con todos los accesorios eléctricos, como tomas corrientes, boquillas, focos (8).\n\n',
-              style: TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal
-              )
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 15, fontWeight: FontWeight.normal),
+            )
           )
         ],
       ),
