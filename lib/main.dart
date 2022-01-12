@@ -1,32 +1,55 @@
-import 'package:alquinet/register/screens/home_screen.dart';
-import 'package:alquinet/register/screens/log_clients_screen.dart';
-import 'package:alquinet/register/screens/log_lessee_screen.dart';
-import 'package:alquinet/register/screens/rental_housing_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/screens.dart';
 
+<<<<<<< HEAD
 import 'contratos/screens/home_screen_contratos.dart';
 
 void main() {
   runApp(const MyApp());
 }
+=======
+void main() => runApp(const MyApp());
+>>>>>>> testing
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool stateMode = false;
+  void changeMode() => setState(() {
+        stateMode = !stateMode;
+      });
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Alquinet',
+      home: MainScreen(
         title: 'Alquinet',
-        home: MainScreen(
-          title: 'Alquinet',
-        ));
+        stateMode: stateMode,
+        changeMode: changeMode,
+      ),
+      theme: MyTheme.getThemeData(stateMode),
+    );
   }
 }
 
+// ESTE WIDGET MUESTRA LAS VISTAS
 class MainScreen extends StatefulWidget {
   final String title;
-  const MainScreen({Key? key, required this.title}) : super(key: key);
+  final bool stateMode;
+  final Function changeMode;
+  const MainScreen({
+    Key? key,
+    required this.title,
+    required this.stateMode,
+    required this.changeMode,
+  }) : super(key: key);
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -34,6 +57,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen>
     with SingleTickerProviderStateMixin {
+<<<<<<< HEAD
   static const _widgeteOptions = <Widget>[
     HomeScreen(),
     LogClients(),
@@ -42,25 +66,20 @@ class _MainScreenState extends State<MainScreen>
     RentalHousingScreen(),
   ];
   int _selectedIndex = 0;
+=======
+  late int _selectedIndex = 0;
+>>>>>>> testing
   late bool isCollapsed = true;
-  late double screenWidth;
-  late double screenHeight;
-  late Duration duration = const Duration(milliseconds: 300);
+  late double screenWidth, screenHeight;
+  late Duration duration = const Duration(milliseconds: 175);
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
-  late Animation<double> _menuScaleAnimation;
-  late Animation<Offset> _slideAnimation;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(_controller);
-    _menuScaleAnimation =
-        Tween<double>(begin: 0.5, end: 1).animate(_controller);
-    _slideAnimation =
-        Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
-            .animate(_controller);
   }
 
   @override
@@ -69,10 +88,14 @@ class _MainScreenState extends State<MainScreen>
     _controller.dispose();
   }
 
-  void _onitemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  void _opctionSelected(int index) => setState(() {
+        isCollapsed ? _controller.forward() : _controller.reverse();
+        isCollapsed = !isCollapsed;
+        _selectedIndex = index;
+      });
+
+  void logout() {
+    print('cerraste sesión');
   }
 
   @override
@@ -82,6 +105,7 @@ class _MainScreenState extends State<MainScreen>
     screenWidth = size.width;
 
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: const Color(0x4F2A3B5F),
       body: Stack(
         children: <Widget>[menu(context), screens(context)],
@@ -268,7 +292,33 @@ class _MainScreenState extends State<MainScreen>
                     ],
                   ),
                 ),
+=======
+      backgroundColor: const Color(0xFF000000),
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: const AssetImage('assets/images/bg_log_housing.jpeg'),
+              fit: BoxFit.cover,
+              colorFilter: widget.stateMode
+                  ? ColorFilter.mode(
+                      Colors.black.withOpacity(0.1), BlendMode.dstATop)
+                  : ColorFilter.mode(
+                      Colors.black.withOpacity(0.05), BlendMode.dstATop),
+            ),
+            color: Theme.of(context).backgroundColor,
+          ),
+          child: Stack(
+            children: <Widget>[
+              MenuScreen(
+                position: _opctionSelected,
+                logout: logout,
+                stateMode: widget.stateMode,
+                changeMode: widget.changeMode,
+                title: widget.title,
+>>>>>>> testing
               ),
+              screens(context)
             ],
           ),
         ),
@@ -295,6 +345,7 @@ class _MainScreenState extends State<MainScreen>
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             physics: const ClampingScrollPhysics(),
+<<<<<<< HEAD
             child: Container(
               padding: const EdgeInsets.only(left: 0, right: 0, top: 48),
               child: Column(
@@ -327,10 +378,49 @@ class _MainScreenState extends State<MainScreen>
                         const Icon(Icons.settings, color: Colors.white),
                       ],
                     ),
+=======
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Container(
+                  // MENU DE LA VISTA PRINCIPAL
+                  padding: const EdgeInsets.only(
+                      left: 16, right: 16, top: 10, bottom: 10),
+                  decoration:
+                      BoxDecoration(color: Theme.of(context).backgroundColor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      InkWell(
+                        child: Icon(Icons.menu,
+                            color: Theme.of(context).primaryColor),
+                        onTap: () {
+                          setState(() {
+                            isCollapsed
+                                ? _controller.forward()
+                                : _controller.reverse();
+
+                            isCollapsed = !isCollapsed;
+                          });
+                        },
+                      ),
+                      Text(
+                        widget.title,
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Theme.of(context).primaryColor),
+                      ),
+                      Icon(Icons.settings,
+                          color: Theme.of(context).primaryColor),
+                    ],
+>>>>>>> testing
                   ),
-                  _widgeteOptions[_selectedIndex]
-                ],
-              ),
+                ),
+                AppRoutes()
+                    .appRoutes[_selectedIndex]
+                    .widget, // CAMBIA DE FORMA DINÁMICA LAS VISTAS
+              ],
             ),
           ),
         ),
