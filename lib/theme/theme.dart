@@ -1,14 +1,57 @@
 import 'package:flutter/material.dart';
 
-final Map<int, Color> myColors = {
-  50: const Color.fromRGBO(147, 205, 72, .1),
-  100: const Color.fromRGBO(147, 205, 72, .2),
-  200: const Color.fromRGBO(147, 205, 72, .3),
-  300: const Color.fromRGBO(147, 205, 72, .4),
-  400: const Color.fromRGBO(147, 205, 72, .5),
-  500: const Color.fromRGBO(147, 205, 72, .6),
-  600: const Color.fromRGBO(147, 205, 72, .7),
-  700: const Color.fromRGBO(147, 205, 72, .8),
-  800: const Color.fromRGBO(147, 205, 72, .9),
-  900: const Color.fromRGBO(147, 205, 72, 1),
-};
+class MyTheme {
+  static ThemeData getThemeData(bool onThemeDark) {
+    return ThemeData(
+    backgroundColor:
+        onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF1A1D2F),
+    primaryColor: onThemeDark
+        ? const Color(0xFF1B1F2F)
+        : const Color(0xFFFFFFFF), // color de fondo
+    highlightColor: onThemeDark
+        ? const Color(0xFFFFFFFF)
+        : const Color(0xFF6F6FFF), // color de iconos...
+    hintColor: onThemeDark
+        ? const Color(0xFFFFFFFF)
+        : const Color(0xFF1A1A2F), // color de un *form
+    textTheme: TextTheme(
+      headline1: TextStyle(
+        // titulo con fondo
+        fontSize: 32.0,
+        fontWeight: FontWeight.bold,
+        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
+      ),
+      headline2: TextStyle(
+        // titulo sin fondo
+        fontSize: 32.0,
+        fontWeight: FontWeight.bold,
+        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFF0D0F1D),
+      ),
+      headline3: TextStyle(
+        // subtitulo con fondo
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+        color: onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF0D0F1D),
+      ),
+      headline4: TextStyle(
+        // subtitulo sin fondo
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
+      ),
+      bodyText1: TextStyle(
+        // parafos  con fondo
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
+        color: onThemeDark ? const Color(0xFF000000) : const Color(0xFFFFFFFF),
+      ),
+      bodyText2: TextStyle(
+        // parafos  sin fondo -----
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
+        color: onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF000000),
+      ),
+    ),
+  );
+  } 
+}
