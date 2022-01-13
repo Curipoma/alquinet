@@ -2,14 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class RentalHousingScreen extends StatefulWidget {
-  const RentalHousingScreen({Key? key}) : super(key: key);
+class LoginUser extends StatefulWidget {
+  const LoginUser({Key? key}) : super(key: key);
 
   @override
-  State<RentalHousingScreen> createState() => _RentalHousingScreenState();
+  State<LoginUser> createState() => _LoginUserState();
 }
 
-class _RentalHousingScreenState extends State<RentalHousingScreen> {
+class _LoginUserState extends State<LoginUser> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,7 +19,7 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
           height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/bg_log_housing.jpeg'),
+                image: AssetImage('assets/images/bg_login_user.jpeg'),
                 fit: BoxFit.cover),
           ),
           child: ClipRRect(
@@ -45,7 +45,7 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
               child: Column(
                 children: [
                   Text(
-                    'Log rental housing',
+                    'Login',
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   Padding(
@@ -54,28 +54,14 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
                       children: [
                         TextField(
                           decoration: InputDecoration(
-                            hintText: 'Name',
+                            hintText: 'Email',
                             hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
                         TextField(
                           decoration: InputDecoration(
-                            hintText: 'Value',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Direction',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Description',
+                            hintText: 'Password',
                             hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
                           style: Theme.of(context).textTheme.bodyText1,

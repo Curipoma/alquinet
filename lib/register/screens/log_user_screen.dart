@@ -2,14 +2,16 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class RentalHousingScreen extends StatefulWidget {
-  const RentalHousingScreen({Key? key}) : super(key: key);
+class LogUser extends StatefulWidget {
+  const LogUser({Key? key}) : super(key: key);
 
   @override
-  State<RentalHousingScreen> createState() => _RentalHousingScreenState();
+  State<LogUser> createState() => _LogUserState();
 }
 
-class _RentalHousingScreenState extends State<RentalHousingScreen> {
+class _LogUserState extends State<LogUser> {
+  String dropdownValue = 'Inquilino';
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,7 +21,7 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
           height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/bg_log_housing.jpeg'),
+                image: AssetImage('assets/images/bg_log_user.jpeg'),
                 fit: BoxFit.cover),
           ),
           child: ClipRRect(
@@ -45,13 +47,20 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
               child: Column(
                 children: [
                   Text(
-                    'Log rental housing',
+                    'Register',
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Column(
                       children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            hintStyle: Theme.of(context).textTheme.bodyText1,
+                          ),
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Name',
@@ -61,25 +70,36 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
                         ),
                         TextField(
                           decoration: InputDecoration(
-                            hintText: 'Value',
+                            hintText: 'Password',
                             hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Direction',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
-                          ),
+                        DropdownButton<String>(
+                          alignment: Alignment.center,
+                          dropdownColor: Theme.of(context).highlightColor,
+                          value: dropdownValue,
+                          icon: const Icon(Icons.arrow_downward),
+                          elevation: 16,
                           style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Description',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
+                          underline: Container(
+                            alignment: Alignment.center,
+                            height: 2,
+                            color: Colors.grey,
                           ),
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              dropdownValue = newValue!;
+                            });
+                          },
+                          items: <String>['Arrendatario', 'Inquilino']
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        )
                       ],
                     ),
                   ),
