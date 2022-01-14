@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/screens.dart';
 
-<<<<<<< HEAD
-import 'contratos/screens/home_screen_contratos.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-=======
 void main() => runApp(const MyApp());
->>>>>>> testing
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -57,18 +49,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen>
     with SingleTickerProviderStateMixin {
-<<<<<<< HEAD
-  static const _widgeteOptions = <Widget>[
-    HomeScreen(),
-    LogClients(),
-    LogLesseeScreen(),
-    HomeScreenContratos(),
-    RentalHousingScreen(),
-  ];
-  int _selectedIndex = 0;
-=======
   late int _selectedIndex = 0;
->>>>>>> testing
   late bool isCollapsed = true;
   late double screenWidth, screenHeight;
   late Duration duration = const Duration(milliseconds: 175);
@@ -105,194 +86,6 @@ class _MainScreenState extends State<MainScreen>
     screenWidth = size.width;
 
     return Scaffold(
-<<<<<<< HEAD
-      backgroundColor: const Color(0x4F2A3B5F),
-      body: Stack(
-        children: <Widget>[menu(context), screens(context)],
-      ),
-    );
-  }
-
-  Widget menu(context) {
-    return SlideTransition(
-      position: _slideAnimation,
-      child: ScaleTransition(
-        scale: _menuScaleAnimation,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: ListView(
-            padding: const EdgeInsets.symmetric(vertical: 150.0),
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    _onitemTapped(0);
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 100.0,
-                                height: 100.0,
-                                child: Image.asset(
-                                    'assets/images/alquinet_logo.jpeg'),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20.0),
-                            child: Text(
-                              widget.title,
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 18.0),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _onitemTapped(1);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_box_outlined,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(
-                          'Log clients',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _onitemTapped(2);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_box_outlined,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(
-                          'Log lessee',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _onitemTapped(3);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_box_outlined,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(
-                          'Contratos',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _onitemTapped(4);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.house_outlined,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Text(
-                          'Log rental housing',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  width: 250.0,
-                  height: 100.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child: Row(
-                          children: const <Widget>[
-                            Icon(
-                              Icons.logout,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              'logout',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ),
-                      GestureDetector(
-                        child: Row(
-                          children: const <Widget>[
-                            Icon(
-                              Icons.login,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              'login',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-=======
       backgroundColor: const Color(0xFF000000),
       body: SafeArea(
         child: Container(
@@ -316,7 +109,6 @@ class _MainScreenState extends State<MainScreen>
                 stateMode: widget.stateMode,
                 changeMode: widget.changeMode,
                 title: widget.title,
->>>>>>> testing
               ),
               screens(context)
             ],
@@ -345,40 +137,6 @@ class _MainScreenState extends State<MainScreen>
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             physics: const ClampingScrollPhysics(),
-<<<<<<< HEAD
-            child: Container(
-              padding: const EdgeInsets.only(left: 0, right: 0, top: 48),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.only(
-                        left: 16, right: 16, top: 10, bottom: 10),
-                    decoration: const BoxDecoration(color: Color(0xFF0A1A2F)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        InkWell(
-                          child: const Icon(Icons.menu, color: Colors.white),
-                          onTap: () {
-                            setState(() {
-                              isCollapsed
-                                  ? _controller.forward()
-                                  : _controller.reverse();
-                              isCollapsed = !isCollapsed;
-                            });
-                          },
-                        ),
-                        Text(
-                          widget.title,
-                          style: const TextStyle(
-                              fontSize: 24, color: Colors.white),
-                        ),
-                        const Icon(Icons.settings, color: Colors.white),
-                      ],
-                    ),
-=======
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -414,7 +172,6 @@ class _MainScreenState extends State<MainScreen>
                       Icon(Icons.settings,
                           color: Theme.of(context).primaryColor),
                     ],
->>>>>>> testing
                   ),
                 ),
                 AppRoutes()

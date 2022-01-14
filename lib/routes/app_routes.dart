@@ -26,5 +26,9 @@ class AppRoutes {
         nameText: 'Log rental housing',
         widget: const RentalHousingScreen(),
         icon: Icons.app_registration_outlined),
+    MyRoute(
+        nameText: 'Administration',
+        widget: const Administration(),
+        icon: Icons.admin_panel_settings_outlined),
   ];
 }
