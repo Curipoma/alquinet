@@ -6,7 +6,7 @@ class Administration extends StatelessWidget {
   const Administration({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    /*   return Scaffold(
       
         appBar: AppBar(
           
@@ -15,5 +15,21 @@ class Administration extends StatelessWidget {
            ),
         
         body: const AuthPage());
+  }
+   */
+    return Stack(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/bg_login_user.jpeg'),
+                fit: BoxFit.cover),
+          ),
+          child: const AuthPage(),
+        ),
+      ],
+    );
   }
 }
