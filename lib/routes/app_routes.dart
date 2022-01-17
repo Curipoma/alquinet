@@ -1,3 +1,4 @@
+import 'package:alquinet/contratos/screens/menu_option_screen.dart';
 import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -30,5 +31,9 @@ class AppRoutes {
         nameText: 'Administration',
         widget: const Administration(),
         icon: Icons.admin_panel_settings_outlined),
+    MyRoute(
+        nameText: 'Contratos',
+        widget: const MenuOptionScreen(),
+        icon: Icons.apartment_outlined),
   ];
 }
