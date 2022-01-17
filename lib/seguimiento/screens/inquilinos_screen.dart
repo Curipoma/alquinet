@@ -16,12 +16,12 @@ class InquilinosScreen extends StatelessWidget {
       child: Column(
         children: [
           const FadeInImage(
-            image: NetworkImage('https://www.cuerpomente.com/medio/2019/07/03/relaja-tu-cara-cuadrada_cfa0022f_846x846.jpg'), 
+            image: NetworkImage('https://media.istockphoto.com/photos/happy-millennial-hispanic-teen-girl-checking-social-media-holding-at-picture-id1225782571?k=20&m=1225782571&s=612x612&w=0&h=SRN4aF24gu17Gt5CZQ1Rnzq1NFeqsrzzZ7bZWwO9wqI='), 
             placeholder: AssetImage('assets/Images/jar-loading.gif'),
             width: double.infinity,
-            height: 230,
+            height: 250,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 30),
+            fadeInDuration: Duration(milliseconds: 10),
             ),
 
             const ListTile(
