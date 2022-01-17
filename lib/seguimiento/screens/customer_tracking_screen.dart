@@ -43,7 +43,7 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendador',style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: const Text('Arrendadores',style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
@@ -75,7 +75,7 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendatario',style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: const Text('Arrendatarios',style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
