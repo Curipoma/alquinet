@@ -12,7 +12,7 @@ class CustomerTracking extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/bg_seguimiento.jpg'),
+          image: AssetImage('assets/images/fondo_seg.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -43,7 +43,7 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Casas'),
+                          child: const Text('Viviendas',style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
@@ -75,7 +75,7 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Inquilinos'),
+                          child: const Text('Agentes de bienes raices',style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
