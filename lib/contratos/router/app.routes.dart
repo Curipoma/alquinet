@@ -1,10 +1,13 @@
+import 'package:alquinet/contratos/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:alquinet/contratos/models/models.dart';
-import 'package:alquinet/contratos/screens/home_screen_contratos.dart';
 
 class AppRoutesContratos{
     static final menuOption = <MenuOption>[
-    MenuOption(route: 'home_contratos', name: 'Contratos Screen', screen: const HomeScreenContratos(), icon: Icons.home_filled,),
+    MenuOption(route: 'homeContratos', name: 'Visualizar Contrato', screen: const HomeScreenContratos(), icon: Icons.assignment,),
+    MenuOption(route: 'homeComprobante', name: 'Comprobante de pagos', screen: const ComprobanteScreen(), icon: Icons.fact_check_rounded,),
+    MenuOption(route: 'homeCatalogos', name: 'Catalogos', screen: const CatalogosScreen(), icon: Icons.apartment_rounded,),
+    MenuOption(route: 'homeTerminos', name: 'Terminos y Condiciones', screen: const HomeScreenContratos(), icon: Icons.auto_stories_outlined,),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){

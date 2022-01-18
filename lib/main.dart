@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'contratos/router/app.routes.dart';
 import 'screens/screens.dart';
 
 void main() => runApp(const MyApp());
@@ -20,6 +21,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: AppRoutesContratos.getAppRoutes(),
+
       title: 'Alquinet',
       home: MainScreen(
         title: 'Alquinet',
