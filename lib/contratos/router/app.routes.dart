@@ -6,7 +6,7 @@ class AppRoutesContratos{
     static final menuOption = <MenuOption>[
     MenuOption(route: 'homeContratos', name: 'Visualizar Contrato', screen: const HomeScreenContratos(), icon: Icons.assignment,),
     MenuOption(route: 'homeComprobante', name: 'Comprobante de pagos', screen: const ComprobanteScreen(), icon: Icons.fact_check_rounded,),
-    MenuOption(route: 'homeCatalogos', name: 'Catalogos', screen: const CatalogosScreen(), icon: Icons.apartment_rounded,),
+    MenuOption(route: 'homeCatalogos', name: 'Lista de precios', screen: const ListaPreciosScreen(), icon: Icons.apartment_rounded,),
     MenuOption(route: 'homeTerminos', name: 'Terminos y Condiciones', screen: const HomeScreenContratos(), icon: Icons.auto_stories_outlined,),
   ];
 
