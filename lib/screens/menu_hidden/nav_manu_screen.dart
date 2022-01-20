@@ -1,4 +1,4 @@
-import 'package:alquinet/routes/app_routes.dart';
+import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -27,8 +27,7 @@ class _MenuScreenState extends State<MenuScreen> {
           // NAV HEAD
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 50.0, left: 20.0),
+              padding: const EdgeInsets.only(top: 50.0, left: 20.0),
               child: GestureDetector(
                 onTap: () => setState(() {
                   widget.position(0);
@@ -51,16 +50,14 @@ class _MenuScreenState extends State<MenuScreen> {
             itemCount: AppRoutes().appRoutes.length,
             itemExtent: 40.0,
             itemBuilder: (context, index) => ListTile(
-              onTap: () => setState(() {
-                widget.position(index);
-              }),
+              onTap: () => setState(() => widget.position(index)),
               leading: Icon(
                 AppRoutes().appRoutes[index].icon,
-                color: Theme.of(context).primaryColor,
+                color: MyTheme.primary,
               ),
               title: Text(
                 AppRoutes().appRoutes[index].nameText,
-                style: TextStyle(color: Theme.of(context).primaryColor),
+                style: MyTheme.getTheme().textTheme.bodyText1,
               ),
             ),
           ),
@@ -79,11 +76,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.app_registration_outlined,
-                      color: Theme.of(context).primaryColor,
+                      color: MyTheme.primary,
                     ),
                     Text(
                       'Register',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(color: MyTheme.primary),
                     ),
                   ],
                 ),
@@ -96,11 +93,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.login_outlined,
-                      color: Theme.of(context).primaryColor,
+                      color: MyTheme.primary,
                     ),
                     Text(
                       'Login',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(color: MyTheme.primary),
                     ),
                   ],
                 ),
@@ -111,11 +108,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.logout_outlined,
-                      color: Theme.of(context).primaryColor,
+                      color: MyTheme.primary,
                     ),
                     Text(
                       'Logout',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(color: MyTheme.primary),
                     ),
                   ],
                 ),
@@ -130,11 +127,11 @@ class _MenuScreenState extends State<MenuScreen> {
                       widget.stateMode
                           ? Icons.light_mode_outlined
                           : Icons.dark_mode_outlined,
-                      color: Theme.of(context).primaryColor,
+                      color: MyTheme.primary,
                     ),
                     Text(
                       'Mode',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(color: MyTheme.primary),
                     ),
                   ],
                 ),

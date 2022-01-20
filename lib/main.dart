@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
         stateMode: stateMode,
         changeMode: changeMode,
       ),
-      theme: MyTheme.getThemeData(stateMode),
+      theme: MyTheme.getThemeLight(),
     );
   }
 }
@@ -49,7 +49,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen>
     with SingleTickerProviderStateMixin {
-  late int _selectedIndex = 0;
+  late int _selectedIndex = 3;
   late bool isCollapsed = true;
   late double screenWidth, screenHeight;
   late Duration duration = const Duration(milliseconds: 175);
@@ -91,15 +91,15 @@ class _MainScreenState extends State<MainScreen>
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: const AssetImage('assets/images/bg_log_housing.jpeg'),
+              image: const AssetImage('assets/images/bg_log_user.jpeg'),
               fit: BoxFit.cover,
               colorFilter: widget.stateMode
                   ? ColorFilter.mode(
-                      Colors.black.withOpacity(0.1), BlendMode.dstATop)
+                      Colors.yellow.withOpacity(0.05), BlendMode.dstATop)
                   : ColorFilter.mode(
-                      Colors.black.withOpacity(0.05), BlendMode.dstATop),
+                      Colors.yellow.withOpacity(0.05), BlendMode.dstATop),
             ),
-            color: Theme.of(context).backgroundColor,
+            color: MyTheme.bgPrimary,
           ),
           child: Stack(
             children: <Widget>[
@@ -145,14 +145,14 @@ class _MainScreenState extends State<MainScreen>
                   padding: const EdgeInsets.only(
                       left: 16, right: 16, top: 10, bottom: 10),
                   decoration:
-                      BoxDecoration(color: Theme.of(context).backgroundColor),
+                      BoxDecoration(color: MyTheme.bgPrimary),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       InkWell(
                         child: Icon(Icons.menu,
-                            color: Theme.of(context).primaryColor),
+                            color: MyTheme.primary),
                         onTap: () {
                           setState(() {
                             isCollapsed
@@ -167,10 +167,10 @@ class _MainScreenState extends State<MainScreen>
                         widget.title,
                         style: TextStyle(
                             fontSize: 24,
-                            color: Theme.of(context).primaryColor),
+                            color: MyTheme.primary),
                       ),
                       Icon(Icons.settings,
-                          color: Theme.of(context).primaryColor),
+                          color: MyTheme.primary),
                     ],
                   ),
                 ),

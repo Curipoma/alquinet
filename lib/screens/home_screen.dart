@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/bg_log_housing.jpeg'),
+                image: AssetImage('assets/images/bg_log_user.jpeg'),
                 fit: BoxFit.cover),
           ),
           child: ClipRRect(

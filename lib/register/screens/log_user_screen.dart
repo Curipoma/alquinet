@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class LogUser extends StatefulWidget {
@@ -38,7 +39,7 @@ class _LogUserState extends State<LogUser> {
               const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
           child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).hintColor,
+              color: MyTheme.getTheme().backgroundColor,
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Padding(
@@ -48,7 +49,7 @@ class _LogUserState extends State<LogUser> {
                 children: [
                   Text(
                     'Register',
-                    style: Theme.of(context).textTheme.headline1,
+                    style: MyTheme.getTheme().textTheme.headline1,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -57,23 +58,23 @@ class _LogUserState extends State<LogUser> {
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Email',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
+                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
                           ),
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: MyTheme.getTheme().textTheme.bodyText1,
                         ),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Name',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
+                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
                           ),
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: MyTheme.getTheme().textTheme.bodyText1,
                         ),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Password',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
+                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
                           ),
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: MyTheme.getTheme().textTheme.bodyText1,
                         ),
                         DropdownButton<String>(
                           alignment: Alignment.center,
@@ -81,7 +82,7 @@ class _LogUserState extends State<LogUser> {
                           value: dropdownValue,
                           icon: const Icon(Icons.arrow_downward),
                           elevation: 16,
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: MyTheme.getTheme().textTheme.bodyText1,
                           underline: Container(
                             alignment: Alignment.center,
                             height: 2,
@@ -103,20 +104,20 @@ class _LogUserState extends State<LogUser> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () => {},
-                    child: Container(
-                      width: 100.0,
-                      height: 30.0,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).highlightColor),
-                      child: Text(
-                        'Submit',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Submit',
+                      style:
+                          TextStyle(color: MyTheme.getTheme().backgroundColor),
                     ),
-                  )
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.resolveWith<Color?>(
+                              (Set<MaterialState> states) =>
+                                  MyTheme.getTheme().primaryColor),
+                    ),
+                  ),
                 ],
               ),
             ),
