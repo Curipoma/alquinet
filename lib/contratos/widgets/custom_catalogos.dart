@@ -19,15 +19,12 @@ class CardSwiper extends StatelessWidget {
         itemWidth: size.width * 0.6,
         itemHeight: size.height * 0.9,
         itemBuilder: (_, int index) {
-          return GestureDetector(
-            onTap: () => Navigator.pushNamed(context, 'homeContratos', arguments: 'movie_instance'),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: const FadeInImage(
-                placeholder: AssetImage ('assets/images/jar-loading.gif'),
-                image: NetworkImage ('https://eloficial.ec/wp-content/uploads/2020/01/portada-casa-render-entorno-2.png'),
-                fit: BoxFit.cover,
-              ),
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: const FadeInImage(
+              placeholder: AssetImage ('assets/images/jar-loading.gif'),
+              image: AssetImage ('assets/images_contratos/casa_1.jpg'),
+              fit: BoxFit.cover,
             ),
           );
         },

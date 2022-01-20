@@ -7,7 +7,7 @@ class AppRoutesContratos{
     MenuOption(route: 'homeContratos', name: 'Visualizar Contrato', screen: const HomeScreenContratos(), icon: Icons.assignment,),
     MenuOption(route: 'homeComprobante', name: 'Comprobante de pagos', screen: const ComprobanteScreen(), icon: Icons.fact_check_rounded,),
     MenuOption(route: 'homeCatalogos', name: 'Lista de precios', screen: const ListaPreciosScreen(), icon: Icons.apartment_rounded,),
-    MenuOption(route: 'homeTerminos', name: 'Terminos y Condiciones', screen: const HomeScreenContratos(), icon: Icons.auto_stories_outlined,),
+    MenuOption(route: 'homeTerminos', name: 'Terminos y Condiciones', screen: const TerminosScreen(), icon: Icons.auto_stories_outlined,),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){

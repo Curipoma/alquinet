@@ -64,6 +64,7 @@ flutter:
     - assets/images/bg_log_user.jpeg
     - assets/images/bg_login_user.jpeg
     - assets/images/jar-loading.gif
+    - assets/images_contratos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

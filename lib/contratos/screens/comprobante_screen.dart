@@ -5,10 +5,11 @@ class ComprobanteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('ComprobanteScreen'),
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+      title: const Center(child: Text('Alquinet')),
+      backgroundColor: const Color(0xFF1A1D2F),
+      elevation: 0,
+    ));
   }
 }

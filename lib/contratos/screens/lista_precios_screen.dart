@@ -7,10 +7,31 @@ class ListaPreciosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          CardSwiper()
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Alquinet', style: TextStyle(fontSize: 25,)),
+        backgroundColor: const Color(0xFF1A1D2F),
+        elevation: 0,
+        actions:  [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: (){
+
+            },
+          )
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            //Tarjetas precios
+            CardSwiper(),
+      
+            //Slider terminos y condiciones
+            CondicionesSlider(),
+      
+          ],
+        ),
       ),
     );
   }
