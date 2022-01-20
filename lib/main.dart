@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'contratos/providers/movies_provider.dart';
 import 'contratos/router/app.routes.dart';
 import 'screens/screens.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const Appstate());
+
+class Appstate extends StatelessWidget {
+  const Appstate({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers:[
+        ChangeNotifierProvider(create: (_)=> PreciosProvider(), lazy: false,)
+      ],
+      child: const MyApp()
+      );
+  }
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -188,3 +204,4 @@ class _MainScreenState extends State<MainScreen>
     );
   }
 }
+

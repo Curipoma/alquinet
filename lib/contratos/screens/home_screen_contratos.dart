@@ -1,10 +1,17 @@
+import 'package:alquinet/contratos/providers/movies_provider.dart';
+import 'package:alquinet/contratos/widgets/custom_catalogos.dart';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreenContratos extends StatelessWidget {
   const HomeScreenContratos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    
+   
+
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       margin: const EdgeInsets.all(15),
@@ -13,16 +20,15 @@ class HomeScreenContratos extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 title: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text('CONTRATO DE ARRIENDO\n\n',
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold
-                          )
-                      ),
+                              fontSize: 25, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
