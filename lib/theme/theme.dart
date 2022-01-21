@@ -1,57 +1,121 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static ThemeData getThemeData(bool onThemeDark) {
+  static bool stateTheme = true;
+  static const Color _primary = Color(0xFFFF8E31);
+
+  static const Color _primaryLight = Color(0xFFFFFFFF);
+  static const Color _bgPrimaryLight = _primary;
+
+  static const Color _primaryDark = _primary;
+  static const Color _bgPrimaryDark = Color(0xFF000000);
+
+  static ThemeData getTheme() {
+    return stateTheme ? _getThemeLight() : _getThemeDark();
+  }
+
+  static Map<int, Color> color = {
+    50: const Color.fromRGBO(136, 14, 79, .1),
+    100: const Color.fromRGBO(136, 14, 79, .2),
+    200: const Color.fromRGBO(136, 14, 79, .3),
+    300: const Color.fromRGBO(136, 14, 79, .4),
+    400: const Color.fromRGBO(136, 14, 79, .5),
+    500: const Color.fromRGBO(136, 14, 79, .6),
+    600: const Color.fromRGBO(136, 14, 79, .7),
+    700: const Color.fromRGBO(136, 14, 79, .8),
+    800: const Color.fromRGBO(136, 14, 79, .9),
+    900: const Color.fromRGBO(136, 14, 79, 1),
+  };
+
+  static ThemeData _getThemeLight() {
     return ThemeData(
-    backgroundColor:
-        onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF1A1D2F),
-    primaryColor: onThemeDark
-        ? const Color(0xFF1B1F2F)
-        : const Color(0xFFFFFFFF), // color de fondo
-    highlightColor: onThemeDark
-        ? const Color(0xFFFFFFFF)
-        : const Color(0xFF6F6FFF), // color de iconos...
-    hintColor: onThemeDark
-        ? const Color(0xFFFFFFFF)
-        : const Color(0xFF1A1A2F), // color de un *form
-    textTheme: TextTheme(
-      headline1: TextStyle(
-        // titulo con fondo
-        fontSize: 32.0,
-        fontWeight: FontWeight.bold,
-        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
+      primaryColor: _primaryLight,
+      backgroundColor: _bgPrimaryLight,
+      primarySwatch: MaterialColor(0xFFFF8E31, color),
+      textTheme: const TextTheme(
+        headline1: TextStyle(
+            color: _primaryLight, fontSize: 34.0, fontWeight: FontWeight.bold),
+        headline2: TextStyle(
+            color: _primaryLight, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: _primaryLight, fontSize: 32.0),
+        bodyText1: TextStyle(
+            color: _primaryLight, fontSize: 16.0, fontWeight: FontWeight.bold),
+        bodyText2: TextStyle(
+            color: _primaryLight,
+            fontSize: 14.0,
+            fontWeight: FontWeight.normal),
+        subtitle1: TextStyle(color: _primaryLight, fontSize: 17.0),
       ),
-      headline2: TextStyle(
-        // titulo sin fondo
-        fontSize: 32.0,
-        fontWeight: FontWeight.bold,
-        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFF0D0F1D),
+      inputDecorationTheme: const InputDecorationTheme(
+        iconColor: _primaryLight,
+        floatingLabelStyle: TextStyle(color: _primaryLight),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
       ),
-      headline3: TextStyle(
-        // subtitulo con fondo
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-        color: onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF0D0F1D),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(primary: _primaryLight),
       ),
-      headline4: TextStyle(
-        // subtitulo sin fondo
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-        color: onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
+    );
+  }
+
+  static ThemeData _getThemeDark() {
+    return ThemeData(
+      primaryColor: _primaryDark,
+      backgroundColor: _bgPrimaryDark,
+      primarySwatch: MaterialColor(0xFFFF8E31, color),
+      textTheme: const TextTheme(
+        headline1: TextStyle(
+            color: _primaryDark, fontSize: 34.0, fontWeight: FontWeight.bold),
+        headline2: TextStyle(
+            color: _primaryDark, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: _primaryDark, fontSize: 32.0),
+        bodyText1: TextStyle(
+            color: _primaryDark, fontSize: 16.0, fontWeight: FontWeight.bold),
+        bodyText2: TextStyle(
+            color: _primaryDark, fontSize: 14.0, fontWeight: FontWeight.normal),
+        subtitle1: TextStyle(color: _primaryDark, fontSize: 17.0),
       ),
-      bodyText1: TextStyle(
-        // parafos  con fondo
-        fontSize: 16.0,
-        fontWeight: FontWeight.normal,
-        color: onThemeDark ? const Color(0xFF000000) : const Color(0xFFFFFFFF),
+      inputDecorationTheme: const InputDecorationTheme(
+        iconColor: _primaryDark,
+        floatingLabelStyle: TextStyle(color: _primaryDark),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
       ),
-      bodyText2: TextStyle(
-        // parafos  sin fondo -----
-        fontSize: 16.0,
-        fontWeight: FontWeight.normal,
-        color: onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF000000),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(primary: _primaryDark),
       ),
-    ),
-  );
-  } 
+    );
+  }
 }

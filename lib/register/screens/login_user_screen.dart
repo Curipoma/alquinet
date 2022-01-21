@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:alquinet/register/widgets/form.dart';
 import 'package:flutter/material.dart';
 
 class LoginUser extends StatefulWidget {
@@ -31,64 +31,68 @@ class _LoginUserState extends State<LoginUser> {
             ),
           ),
         ),
-        Padding(
-          padding:
-              const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).hintColor,
-              borderRadius: BorderRadius.circular(20.0),
+        MyCustomForm(
+          fields: [
+            Text(
+              'Login users',
+              style: Theme.of(context).textTheme.headline1,
             ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 40.0, horizontal: 50.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
-                  Text(
-                    'Login',
-                    style: Theme.of(context).textTheme.headline1,
+                  textFormField(
+                    'Alvaro',
+                    'Name',
+                    'Your name',
+                    const Icon(Icons.account_box_outlined),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      children: [
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Email',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Password',
-                            hintStyle: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                      ],
-                    ),
+                  textFormField(
+                    '*********',
+                    'Password',
+                    'Your password',
+                    const Icon(Icons.password_outlined),
                   ),
-                  GestureDetector(
-                    onTap: () => {},
-                    child: Container(
-                      width: 100.0,
-                      height: 30.0,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).highlightColor),
-                      child: Text(
-                        'Submit',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
-          ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Theme.of(context).backgroundColor),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                    (Set<MaterialState> states) =>
+                        Theme.of(context).primaryColor),
+              ),
+            ),
+          ],
         ),
       ],
+    );
+  }
+
+  Widget textFormField(
+    String hintText,
+    String labelText,
+    String helperText,
+    Widget icon,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      child: TextFormField(
+        validator: (value) =>
+            value != null && value.isEmpty ? 'Este campo es requerido' : null,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        decoration: InputDecoration(
+          hintText: hintText,
+          labelText: labelText,
+          helperText: helperText,
+          icon: icon,
+        ),
+      ),
     );
   }
 }
