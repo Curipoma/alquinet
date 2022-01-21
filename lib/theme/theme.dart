@@ -1,103 +1,98 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static Color primary = const Color(0xFF000000);
-  static Color bgPrimary = const Color(0xFFC08E31); // 0xFFE7C904  #c08E31
+  static bool stateTheme = false;
+  static Color primaryLight = const Color(0xFFFFFFFF);
+  static Color bgPrimaryLight = const Color(0xFFE98E31);
+
+  static Color primaryDark = const Color(0xFFE98E31);
+  static Color bgPrimaryDark = const Color(0xFF000000);
 
   static ThemeData getTheme() {
-    return getThemeLight();
+    print(stateTheme);
+    return stateTheme ? getThemeLight() : getThemeDark();
   }
 
   static ThemeData getThemeLight() {
-    return ThemeData(
-      primaryColor: primary,
-      backgroundColor: bgPrimary,
+    return ThemeData.light().copyWith(
+      primaryColor: primaryLight,
+      backgroundColor: bgPrimaryLight,
       textTheme: TextTheme(
-        headline1: TextStyle(color: primary, fontSize: 32.0),
-        bodyText1: TextStyle(color: primary, fontSize: 16.0),
-        subtitle1: TextStyle(color: primary,fontSize: 17.0),
+        headline1: TextStyle(
+            color: primaryLight, fontSize: 34.0, fontWeight: FontWeight.bold),
+        headline2: TextStyle(
+            color: primaryLight, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: primaryLight, fontSize: 32.0),
+        bodyText1: TextStyle(
+            color: primaryLight, fontSize: 16.0, fontWeight: FontWeight.bold),
+        subtitle1: TextStyle(color: primaryLight, fontSize: 17.0),
       ),
       inputDecorationTheme: InputDecorationTheme(
-        iconColor: primary,
-        floatingLabelStyle: TextStyle(color: primary),
+        iconColor: primaryLight,
+        floatingLabelStyle: TextStyle(color: primaryLight),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primary),
+          borderSide: BorderSide(color: primaryLight),
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primary),
+          borderSide: BorderSide(color: primaryLight),
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: primary),
+          borderSide: BorderSide(color: primaryLight),
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(primary: primaryLight),
+      ),
     );
   }
 
-  static ThemeData getThemeDataDark(bool onThemeDark) {
-    return ThemeData(
-      backgroundColor:
-          onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF1A1D2F),
-      primaryColor: onThemeDark
-          ? const Color(0xFF1B1F2F)
-          : const Color(0xFFFFFFFF), // color de fondo
-      highlightColor: onThemeDark
-          ? const Color(0xFFFFFFFF)
-          : const Color(0xFF6F6FFF), // color de iconos...
-      hintColor: onThemeDark
-          ? const Color(0xFFFFFFFF)
-          : const Color(0xFF1A1A2F), // color de un *form
+  static ThemeData getThemeDark() {
+    return ThemeData.dark().copyWith(
+      primaryColor: primaryDark,
+      backgroundColor: bgPrimaryDark,
       textTheme: TextTheme(
         headline1: TextStyle(
-          // titulo con fondo
-          fontSize: 32.0,
-          fontWeight: FontWeight.bold,
-          color:
-              onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
-        ),
+            color: primaryDark, fontSize: 34.0, fontWeight: FontWeight.bold),
         headline2: TextStyle(
-          // titulo sin fondo
-          fontSize: 32.0,
-          fontWeight: FontWeight.bold,
-          color:
-              onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFF0D0F1D),
-        ),
-        headline3: TextStyle(
-          // subtitulo con fondo
-          fontSize: 24.0,
-          fontWeight: FontWeight.bold,
-          color:
-              onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF0D0F1D),
-        ),
-        headline4: TextStyle(
-          // subtitulo sin fondo
-          fontSize: 24.0,
-          fontWeight: FontWeight.bold,
-          color:
-              onThemeDark ? const Color(0xFF0D0F1D) : const Color(0xFFFFFFFF),
-        ),
+            color: primaryDark, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: primaryDark, fontSize: 32.0),
         bodyText1: TextStyle(
-          // parafos  con fondo
-          fontSize: 16.0,
-          fontWeight: FontWeight.normal,
-          color:
-              onThemeDark ? const Color(0xFF000000) : const Color(0xFFFFFFFF),
+            color: primaryDark, fontSize: 16.0, fontWeight: FontWeight.bold),
+        subtitle1: TextStyle(color: primaryDark, fontSize: 17.0),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        iconColor: primaryDark,
+        floatingLabelStyle: TextStyle(color: primaryDark),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: primaryDark),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
         ),
-        bodyText2: TextStyle(
-          // parafos  sin fondo -----
-          fontSize: 16.0,
-          fontWeight: FontWeight.normal,
-          color:
-              onThemeDark ? const Color(0xFFFFFFFF) : const Color(0xFF000000),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: primaryDark),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
         ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: primaryDark),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+          ),
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(primary: primaryDark),
       ),
     );
   }

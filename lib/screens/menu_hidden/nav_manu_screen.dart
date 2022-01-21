@@ -1,16 +1,14 @@
+import 'package:alquinet/providers/theme.dart';
 import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatefulWidget {
-  final Function position, logout, changeMode;
-  final bool stateMode;
+  final Function position;
   final String title;
   const MenuScreen({
     Key? key,
     required this.position,
-    required this.logout,
-    required this.stateMode,
-    required this.changeMode,
     required this.title,
   }) : super(key: key);
 
@@ -21,10 +19,11 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context);
+
     return Column(
       children: [
         Row(
-          // NAV HEAD
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 50.0, left: 20.0),
@@ -45,25 +44,23 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
         Flexible(
-          // NAV BODY
           child: ListView.builder(
-            itemCount: AppRoutes().appRoutes.length,
+            itemCount: ChildrenRoutesHome().appRoutes.length,
             itemExtent: 40.0,
             itemBuilder: (context, index) => ListTile(
               onTap: () => setState(() => widget.position(index)),
               leading: Icon(
-                AppRoutes().appRoutes[index].icon,
-                color: MyTheme.primary,
+                ChildrenRoutesHome().appRoutes[index].icon,
+                color: MyTheme.getTheme().primaryColor,
               ),
               title: Text(
-                AppRoutes().appRoutes[index].nameText,
+                ChildrenRoutesHome().appRoutes[index].nameText,
                 style: MyTheme.getTheme().textTheme.bodyText1,
               ),
             ),
           ),
         ),
         Padding(
-          // NAV FOTTER
           padding: const EdgeInsets.symmetric(vertical: 15.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -76,11 +73,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.app_registration_outlined,
-                      color: MyTheme.primary,
+                      color: MyTheme.getTheme().primaryColor,
                     ),
                     Text(
                       'Register',
-                      style: TextStyle(color: MyTheme.primary),
+                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
                     ),
                   ],
                 ),
@@ -93,45 +90,43 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.login_outlined,
-                      color: MyTheme.primary,
+                      color: MyTheme.getTheme().primaryColor,
                     ),
                     Text(
                       'Login',
-                      style: TextStyle(color: MyTheme.primary),
+                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
                     ),
                   ],
                 ),
               ),
               GestureDetector(
-                onTap: () => widget.logout(),
+                onTap: () {},
                 child: Row(
                   children: <Widget>[
                     Icon(
                       Icons.logout_outlined,
-                      color: MyTheme.primary,
+                      color: MyTheme.getTheme().primaryColor,
                     ),
                     Text(
                       'Logout',
-                      style: TextStyle(color: MyTheme.primary),
+                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
                     ),
                   ],
                 ),
               ),
               GestureDetector(
-                onTap: () => setState(() {
-                  widget.changeMode();
-                }),
+                onTap: () => {
+                  MyTheme.stateTheme = !MyTheme.stateTheme,
+                  theme.setTheme(MyTheme.getTheme()),
+                },
                 child: Row(
                   children: <Widget>[
-                    Icon(
-                      widget.stateMode
-                          ? Icons.light_mode_outlined
-                          : Icons.dark_mode_outlined,
-                      color: MyTheme.primary,
+                    const Icon(
+                      Icons.light_mode_outlined,
                     ),
                     Text(
                       'Mode',
-                      style: TextStyle(color: MyTheme.primary),
+                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
                     ),
                   ],
                 ),
