@@ -9,7 +9,7 @@ class AppRoutesContratos{
     MenuOption(route: 'homeCatalogos', name: 'Lista de precios', screen: const ListaPreciosScreen(), icon: Icons.apartment_rounded,),
     MenuOption(route: 'homeTerminos', name: 'Terminos y Condiciones', screen: const TerminosScreen(), icon: Icons.auto_stories_outlined,),
   ];
-
+  
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){
     Map<String, Widget Function(BuildContext)> appRoutes = {};
     

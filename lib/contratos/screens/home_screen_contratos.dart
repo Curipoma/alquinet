@@ -1,17 +1,9 @@
-import 'package:alquinet/contratos/providers/movies_provider.dart';
-import 'package:alquinet/contratos/widgets/custom_catalogos.dart';
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 class HomeScreenContratos extends StatelessWidget {
   const HomeScreenContratos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
-   
-
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       margin: const EdgeInsets.all(15),

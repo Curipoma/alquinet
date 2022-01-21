@@ -5,11 +5,6 @@ class TerminosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    //TODO: Cambiar por una instancia de terminos y condiciones
-    final String terminosDetails = ModalRoute.of(context)?.settings.arguments.toString() ?? 'no hay detalles';
-
-
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -41,12 +36,12 @@ class _CustomAppBar extends StatelessWidget {
         title: Container(
           width: double.infinity,
           alignment: Alignment.bottomCenter,
-          color: Colors.black12,
-          child: const Text('Detalles del titulo', style: TextStyle(fontSize: 16, color: Colors.redAccent),),
+          color: Colors.black45,
+          child: const Text('Detalles del titulo', style: TextStyle(fontSize: 16, color: Colors.white),),
         ),
         background: const FadeInImage(
           placeholder: AssetImage('assets/images/jar-loading.gif'), 
-          image: AssetImage('assets/images_contratos/casa_1.jpg'),
+          image: AssetImage('assets/images_contratos/casa_defecto.jpg'),
           fit: BoxFit.cover,
           ),
       ),
@@ -73,7 +68,7 @@ class _PosterAndTitle extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: const FadeInImage(
               placeholder: AssetImage('assets/images/jar-loading.gif'), 
-              image: AssetImage('assets/images_contratos/casa_1.jpg'),
+              image: AssetImage('assets/images_contratos/casa_defecto.jpg'),
               height: 120,
             ),
           ),
