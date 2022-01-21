@@ -14,6 +14,12 @@ class MyRoutes {
       ),
       icon: Icons.home_max_outlined,
     ),
+    MenuOpction(
+      route: 'interfaz',
+      name: 'Interfaz Screen',
+      screen: const InterfazScreen(),
+      icon: Icons.home_max_outlined,
+    ),
   ];
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};

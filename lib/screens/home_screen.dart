@@ -2,10 +2,12 @@ import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  final int? selectedIndex;
   final String title;
   const HomeScreen({
     Key? key,
     required this.title,
+    this.selectedIndex,
   }) : super(key: key);
 
   @override
@@ -14,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  late int _selectedIndex = 0;
+  late int _selectedIndex = widget.selectedIndex ?? 0;
   late bool isCollapsed = true;
   late double screenWidth, screenHeight;
   late Duration duration = const Duration(milliseconds: 175);
@@ -46,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    print(_selectedIndex);
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -89,8 +92,7 @@ class _HomeScreenState extends State<HomeScreen>
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
-                  padding: const EdgeInsets.only(
-                      left: 16, right: 16, top: 10, bottom: 10),
+                  padding: const EdgeInsets.all(10.0),
                   decoration:
                       BoxDecoration(color: Theme.of(context).backgroundColor),
                   child: Row(
@@ -118,18 +120,87 @@ class _HomeScreenState extends State<HomeScreen>
                             fontSize: 24,
                             color: Theme.of(context).primaryColor),
                       ),
-                      Icon(Icons.settings,
-                          color: Theme.of(context).primaryColor),
+                      const SizedBox(),
                     ],
                   ),
                 ),
-                ChildrenRoutesHome()
-                    .appRoutes[_selectedIndex]
-                    .widget, // CAMBIA DE FORMA DINÁMICA LAS VISTAS
+                ChildrenRoutesHome().appRoutes[_selectedIndex].widget,
+                footer(),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget footer() {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment(0.0, 1.0),
+          colors: <Color>[
+            Color(0xFF000000),
+            Color(0xFFFF8E31),
+          ],
+          tileMode: TileMode.repeated,
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                width: 250.0,
+                child: Text(
+                  'ALQUINET',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+              SizedBox(
+                width: 250.0,
+                child: Text(
+                  '© 2022 Alquinet',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+              SizedBox(
+                width: 250.0,
+                child: Text(
+                  'Derechos reserbados',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+              SizedBox(
+                width: 250.0,
+                child: Text(
+                  'Política de privacidad',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+              SizedBox(
+                width: 250.0,
+                child: Text(
+                  'Términos y condiciones',
+                  textAlign: TextAlign.right,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 100.0,
+            height: 100.0,
+            child: Image.asset('assets/images/alquinet_logo.jpeg'),
+          ),
+        ],
       ),
     );
   }

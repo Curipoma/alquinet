@@ -20,7 +20,7 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeChanger>(context);
-  
+
     return Column(
       children: [
         Row(
@@ -121,8 +121,11 @@ class _MenuScreenState extends State<MenuScreen> {
                 },
                 child: Row(
                   children: <Widget>[
-                    const Icon(
-                      Icons.light_mode_outlined,
+                    Icon(
+                      MyTheme.stateTheme
+                          ? Icons.light_mode_outlined
+                          : Icons.dark_mode_outlined,
+                      color: Theme.of(context).primaryColor,
                     ),
                     Text(
                       'Mode',

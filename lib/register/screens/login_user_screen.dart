@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:alquinet/register/widgets/form.dart';
 import 'package:flutter/material.dart';
 
 class LoginUser extends StatefulWidget {
@@ -30,60 +31,44 @@ class _LoginUserState extends State<LoginUser> {
             ),
           ),
         ),
-        Padding(
-          padding:
-              const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.circular(20.0),
+        MyCustomForm(
+          fields: [
+            Text(
+              'Login users',
+              style: Theme.of(context).textTheme.headline1,
             ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 40.0, horizontal: 50.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
-                  Text(
-                    'Login',
-                    style: Theme.of(context).textTheme.headline1,
+                  textFormField(
+                    'Alvaro',
+                    'Name',
+                    'Your name',
+                    const Icon(Icons.account_box_outlined),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      children: [
-                        textFormField(
-                          'Alvaro',
-                          'Name',
-                          'Tu nombre',
-                          const Icon(Icons.account_box_outlined),
-                        ),
-                        textFormField(
-                          'Alvaro',
-                          'Name',
-                          'Tu nombre',
-                          const Icon(Icons.password_outlined),
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Submit',
-                      style:
-                          TextStyle(color: Theme.of(context).backgroundColor),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.resolveWith<Color?>(
-                              (Set<MaterialState> states) =>
-                                  Theme.of(context).primaryColor),
-                    ),
+                  textFormField(
+                    '*********',
+                    'Password',
+                    'Your password',
+                    const Icon(Icons.password_outlined),
                   ),
                 ],
               ),
             ),
-          ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Theme.of(context).backgroundColor),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                    (Set<MaterialState> states) =>
+                        Theme.of(context).primaryColor),
+              ),
+            ),
+          ],
         ),
       ],
     );

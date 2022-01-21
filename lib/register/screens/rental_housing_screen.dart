@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:alquinet/register/widgets/form.dart';
 import 'package:flutter/material.dart';
 
 class RentalHousingScreen extends StatefulWidget {
@@ -30,73 +31,56 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
             ),
           ),
         ),
-        Padding(
-          padding:
-              const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.circular(20.0),
+        MyCustomForm(
+          fields: [
+            Text(
+              'Log rental housing',
+              style: Theme.of(context).textTheme.headline1,
             ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 40.0, horizontal: 50.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
-                  Text(
-                    'Log rental housing',
-                    style: Theme.of(context).textTheme.headline1,
+                  textFormField(
+                    'Alvaro',
+                    'Name',
+                    'Tu nombre',
+                    const Icon(Icons.account_box_outlined),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      children: [
-                        textFormField(
-                          'Alvaro',
-                          'Name',
-                          'Tu nombre',
-                          const Icon(Icons.account_box_outlined),
-                        ),
-                        textFormField(
-                          'Value',
-                          'Value',
-                          'Value',
-                          const Icon(Icons.gite),
-                        ),
-                        textFormField(
-                          'Direction',
-                          'Direction',
-                          'Direction',
-                          const Icon(Icons.add_location_alt_outlined),
-                        ),
-                        textFormField(
-                          'Description',
-                          'Description',
-                          'Description',
-                          const Icon(Icons.description_outlined),
-                        ),
-                      ],
-                    ),
+                  textFormField(
+                    'Value',
+                    'Value',
+                    'Value',
+                    const Icon(Icons.gite),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Submit',
-                      style:
-                          TextStyle(color: Theme.of(context).backgroundColor),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.resolveWith<Color?>(
-                        (Set<MaterialState> states) =>
-                            Theme.of(context).primaryColor,
-                      ),
-                    ),
+                  textFormField(
+                    'Direction',
+                    'Direction',
+                    'Direction',
+                    const Icon(Icons.add_location_alt_outlined),
+                  ),
+                  textFormField(
+                    'Description',
+                    'Description',
+                    'Description',
+                    const Icon(Icons.description_outlined),
                   ),
                 ],
               ),
             ),
-          ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Theme.of(context).backgroundColor),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) => Theme.of(context).primaryColor,
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );
