@@ -1,6 +1,4 @@
 import 'dart:ui';
-
-import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class RentalHousingScreen extends StatefulWidget {
@@ -37,7 +35,7 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
               const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
           child: Container(
             decoration: BoxDecoration(
-              color: MyTheme.getTheme().backgroundColor,
+              color: Theme.of(context).backgroundColor,
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Padding(
@@ -47,7 +45,7 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
                 children: [
                   Text(
                     'Log rental housing',
-                    style: MyTheme.getTheme().textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -85,13 +83,13 @@ class _RentalHousingScreenState extends State<RentalHousingScreen> {
                     child: Text(
                       'Submit',
                       style:
-                          TextStyle(color: MyTheme.getTheme().backgroundColor),
+                          TextStyle(color: Theme.of(context).backgroundColor),
                     ),
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) =>
-                            MyTheme.getTheme().primaryColor,
+                            Theme.of(context).primaryColor,
                       ),
                     ),
                   ),

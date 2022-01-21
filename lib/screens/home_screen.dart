@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
     screenWidth = size.width;
 
     return Scaffold(
-      backgroundColor: MyTheme.getTheme().backgroundColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SafeArea(
         child: Stack(
           children: <Widget>[
@@ -92,14 +92,14 @@ class _HomeScreenState extends State<HomeScreen>
                   padding: const EdgeInsets.only(
                       left: 16, right: 16, top: 10, bottom: 10),
                   decoration:
-                      BoxDecoration(color: MyTheme.getTheme().backgroundColor),
+                      BoxDecoration(color: Theme.of(context).backgroundColor),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       InkWell(
                         child: Icon(Icons.menu,
-                            color: MyTheme.getTheme().primaryColor),
+                            color: Theme.of(context).primaryColor),
                         onTap: () {
                           setState(
                             () {
@@ -116,10 +116,10 @@ class _HomeScreenState extends State<HomeScreen>
                         widget.title,
                         style: TextStyle(
                             fontSize: 24,
-                            color: MyTheme.getTheme().primaryColor),
+                            color: Theme.of(context).primaryColor),
                       ),
                       Icon(Icons.settings,
-                          color: MyTheme.getTheme().primaryColor),
+                          color: Theme.of(context).primaryColor),
                     ],
                   ),
                 ),

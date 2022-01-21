@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ThemeChanger with ChangeNotifier {
-  late ThemeData themeData;
-  ThemeChanger(this.themeData);
+  late ThemeData _themeData;
+  ThemeChanger(this._themeData);
 
-  getTheme() => themeData;
+  getTheme() => _themeData;
   setTheme(ThemeData theme) {
-    themeData = theme;
+    _themeData = theme;
     notifyListeners();
   }
 }

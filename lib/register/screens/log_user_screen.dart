@@ -1,6 +1,4 @@
 import 'dart:ui';
-
-import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class LogUser extends StatefulWidget {
@@ -39,7 +37,7 @@ class _LogUserState extends State<LogUser> {
               const EdgeInsets.symmetric(vertical: 100.0, horizontal: 20.0),
           child: Container(
             decoration: BoxDecoration(
-              color: MyTheme.getTheme().backgroundColor,
+              color: Theme.of(context).backgroundColor,
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Padding(
@@ -49,7 +47,7 @@ class _LogUserState extends State<LogUser> {
                 children: [
                   Text(
                     'Register',
-                    style: MyTheme.getTheme().textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -58,23 +56,23 @@ class _LogUserState extends State<LogUser> {
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Email',
-                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
+                            hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
-                          style: MyTheme.getTheme().textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Name',
-                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
+                            hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
-                          style: MyTheme.getTheme().textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                         TextField(
                           decoration: InputDecoration(
                             hintText: 'Password',
-                            hintStyle: MyTheme.getTheme().textTheme.bodyText1,
+                            hintStyle: Theme.of(context).textTheme.bodyText1,
                           ),
-                          style: MyTheme.getTheme().textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                         DropdownButton<String>(
                           alignment: Alignment.center,
@@ -82,7 +80,7 @@ class _LogUserState extends State<LogUser> {
                           value: dropdownValue,
                           icon: const Icon(Icons.arrow_downward),
                           elevation: 16,
-                          style: MyTheme.getTheme().textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText1,
                           underline: Container(
                             alignment: Alignment.center,
                             height: 2,
@@ -109,13 +107,13 @@ class _LogUserState extends State<LogUser> {
                     child: Text(
                       'Submit',
                       style:
-                          TextStyle(color: MyTheme.getTheme().backgroundColor),
+                          TextStyle(color: Theme.of(context).backgroundColor),
                     ),
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.resolveWith<Color?>(
                               (Set<MaterialState> states) =>
-                                  MyTheme.getTheme().primaryColor),
+                                  Theme.of(context).primaryColor),
                     ),
                   ),
                 ],

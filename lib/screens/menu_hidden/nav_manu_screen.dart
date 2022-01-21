@@ -20,7 +20,7 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeChanger>(context);
-
+  
     return Column(
       children: [
         Row(
@@ -51,11 +51,11 @@ class _MenuScreenState extends State<MenuScreen> {
               onTap: () => setState(() => widget.position(index)),
               leading: Icon(
                 ChildrenRoutesHome().appRoutes[index].icon,
-                color: MyTheme.getTheme().primaryColor,
+                color: Theme.of(context).primaryColor,
               ),
               title: Text(
                 ChildrenRoutesHome().appRoutes[index].nameText,
-                style: MyTheme.getTheme().textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
           ),
@@ -73,11 +73,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.app_registration_outlined,
-                      color: MyTheme.getTheme().primaryColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                     Text(
                       'Register',
-                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
+                      style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ],
                 ),
@@ -90,11 +90,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.login_outlined,
-                      color: MyTheme.getTheme().primaryColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                     Text(
                       'Login',
-                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
+                      style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ],
                 ),
@@ -105,11 +105,11 @@ class _MenuScreenState extends State<MenuScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.logout_outlined,
-                      color: MyTheme.getTheme().primaryColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                     Text(
                       'Logout',
-                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
+                      style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ],
                 ),
@@ -126,7 +126,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     ),
                     Text(
                       'Mode',
-                      style: TextStyle(color: MyTheme.getTheme().primaryColor),
+                      style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ],
                 ),

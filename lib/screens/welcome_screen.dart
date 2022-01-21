@@ -1,4 +1,3 @@
-import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -23,7 +22,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: Text(
                     'alquinet'.toUpperCase(),
-                    style: MyTheme.getTheme().textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                 ),
                 Container(
@@ -66,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             Text(
                                 'con alquinet ofrece y recibe lo mejor'
                                     .toUpperCase(),
-                                style: MyTheme.getTheme().textTheme.headline2,
+                                style: Theme.of(context).textTheme.headline2,
                                 textAlign: TextAlign.center),
                           ],
                         ),
@@ -167,13 +166,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           children: [
                             Text(
                               'Alquinet',
-                              style: MyTheme.getTheme().textTheme.headline1,
+                              style: Theme.of(context).textTheme.headline1,
                             ),
                             Column(
                               children: [
                                 Text(
                                   'Información al alcance de tus manos',
-                                  style: MyTheme.getTheme().textTheme.bodyText1,
+                                  style: Theme.of(context).textTheme.bodyText1,
                                 ),
                               ],
                             ),

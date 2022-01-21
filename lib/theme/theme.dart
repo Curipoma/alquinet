@@ -2,97 +2,96 @@ import 'package:flutter/material.dart';
 
 class MyTheme {
   static bool stateTheme = false;
-  static Color primaryLight = const Color(0xFFFFFFFF);
-  static Color bgPrimaryLight = const Color(0xFFE98E31);
+  static const Color _primaryLight = Color(0xFFFFFFFF);
+  static const Color _bgPrimaryLight = Color(0xFFE98E31);
 
-  static Color primaryDark = const Color(0xFFE98E31);
-  static Color bgPrimaryDark = const Color(0xFF000000);
+  static const Color _primaryDark = Color(0xFFE98E31);
+  static const Color _bgPrimaryDark = Color(0xFF000000);
 
   static ThemeData getTheme() {
-    print(stateTheme);
-    return stateTheme ? getThemeLight() : getThemeDark();
+    return stateTheme ? _getThemeLight() : _getThemeDark();
   }
 
-  static ThemeData getThemeLight() {
+  static ThemeData _getThemeLight() {
     return ThemeData.light().copyWith(
-      primaryColor: primaryLight,
-      backgroundColor: bgPrimaryLight,
-      textTheme: TextTheme(
+      primaryColor: _primaryLight,
+      backgroundColor: _bgPrimaryLight,
+      textTheme: const TextTheme(
         headline1: TextStyle(
-            color: primaryLight, fontSize: 34.0, fontWeight: FontWeight.bold),
+            color: _primaryLight, fontSize: 34.0, fontWeight: FontWeight.bold),
         headline2: TextStyle(
-            color: primaryLight, fontSize: 32.0, fontWeight: FontWeight.bold),
-        headline3: TextStyle(color: primaryLight, fontSize: 32.0),
+            color: _primaryLight, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: _primaryLight, fontSize: 32.0),
         bodyText1: TextStyle(
-            color: primaryLight, fontSize: 16.0, fontWeight: FontWeight.bold),
-        subtitle1: TextStyle(color: primaryLight, fontSize: 17.0),
+            color: _primaryLight, fontSize: 16.0, fontWeight: FontWeight.bold),
+        subtitle1: TextStyle(color: _primaryLight, fontSize: 17.0),
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        iconColor: primaryLight,
-        floatingLabelStyle: TextStyle(color: primaryLight),
+      inputDecorationTheme: const InputDecorationTheme(
+        iconColor: _primaryLight,
+        floatingLabelStyle: TextStyle(color: _primaryLight),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryLight),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryLight),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryLight),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryLight),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(primary: primaryLight),
+        style: TextButton.styleFrom(primary: _primaryLight),
       ),
     );
   }
 
-  static ThemeData getThemeDark() {
+  static ThemeData _getThemeDark() {
     return ThemeData.dark().copyWith(
-      primaryColor: primaryDark,
-      backgroundColor: bgPrimaryDark,
-      textTheme: TextTheme(
+      primaryColor: _primaryDark,
+      backgroundColor: _bgPrimaryDark,
+      textTheme: const TextTheme(
         headline1: TextStyle(
-            color: primaryDark, fontSize: 34.0, fontWeight: FontWeight.bold),
+            color: _primaryDark, fontSize: 34.0, fontWeight: FontWeight.bold),
         headline2: TextStyle(
-            color: primaryDark, fontSize: 32.0, fontWeight: FontWeight.bold),
-        headline3: TextStyle(color: primaryDark, fontSize: 32.0),
+            color: _primaryDark, fontSize: 32.0, fontWeight: FontWeight.bold),
+        headline3: TextStyle(color: _primaryDark, fontSize: 32.0),
         bodyText1: TextStyle(
-            color: primaryDark, fontSize: 16.0, fontWeight: FontWeight.bold),
-        subtitle1: TextStyle(color: primaryDark, fontSize: 17.0),
+            color: _primaryDark, fontSize: 16.0, fontWeight: FontWeight.bold),
+        subtitle1: TextStyle(color: _primaryDark, fontSize: 17.0),
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        iconColor: primaryDark,
-        floatingLabelStyle: TextStyle(color: primaryDark),
+      inputDecorationTheme: const InputDecorationTheme(
+        iconColor: _primaryDark,
+        floatingLabelStyle: TextStyle(color: _primaryDark),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryDark),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryDark),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: primaryDark),
-          borderRadius: const BorderRadius.only(
+          borderSide: BorderSide(color: _primaryDark),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
           ),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(primary: primaryDark),
+        style: TextButton.styleFrom(primary: _primaryDark),
       ),
     );
   }
