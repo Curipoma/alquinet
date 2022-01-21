@@ -83,7 +83,6 @@ class _LoginUserState extends State<LoginUser> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: TextFormField(
-        autofocus: true,
         validator: (value) =>
             value != null && value.isEmpty ? 'Este campo es requerido' : null,
         autovalidateMode: AutovalidateMode.onUserInteraction,
