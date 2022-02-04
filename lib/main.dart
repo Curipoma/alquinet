@@ -1,7 +1,6 @@
-import 'package:alquinet/providers/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:alquinet/providers/theme.dart';
 import 'package:provider/provider.dart';
-import 'contratos/router/app.routes.dart';
 import 'screens/screens.dart';
 
 void main() => runApp(const MyApp());
@@ -26,8 +25,6 @@ class MaterialAppWithTheme extends StatelessWidget {
     final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
-
       title: 'Alquinet',
       theme: theme.getTheme(),
       initialRoute: MyRoutes.initialRoute,
@@ -35,4 +32,3 @@ class MaterialAppWithTheme extends StatelessWidget {
     );
   }
 }
-

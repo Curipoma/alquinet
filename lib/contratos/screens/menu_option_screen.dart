@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:alquinet/contratos/router/app.routes.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +8,8 @@ class MenuOptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final menuOption = AppRoutesContratos.menuOption;
-    
+
     return Stack(
       children: [
         Container(
@@ -19,14 +20,8 @@ class MenuOptionScreen extends StatelessWidget {
               leading: Icon(
                 menuOption[i].icon,
               ),
-              title: Text(menuOption[i].name),
+              title: Text(menuOption[i].name, style: TextStyle(color: Theme.of(context).backgroundColor),),
               onTap: () {
-                // final route = MaterialPageRoute(
-                //     builder: (context) => const ListView1Screen());
-
-                //pushReplacement: dirige a otra pagina pero no permite regresar. Validos para logins
-                // Navigator.push(context, route);
-
                 Navigator.pushNamed(context, menuOption[i].route);
               },
             ),

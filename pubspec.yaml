@@ -71,6 +71,16 @@ flutter:
     - assets/images/house_home_3.jpg
     - assets/images/interfaz_1.jpeg
     - assets/images/interfaz_2.jpeg
+    - assets/images/jar-loading.gif
+    - assets/images_contratos/casa_defecto.jpg
+    - assets/images_contratos/casa_1.jpg
+    - assets/images_contratos/casa_2.jpg
+    - assets/images_contratos/casa_3.jpg
+    - assets/images_contratos/casa_4.jpg
+    - assets/images_contratos/casa_5.jpg
+    - assets/images_contratos/casa_6.jpg
+    - assets/images_contratos/terminos_condiciones.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

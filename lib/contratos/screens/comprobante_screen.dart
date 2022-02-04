@@ -9,10 +9,8 @@ class ComprobanteScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Alquinet',
-              style: TextStyle(
-                fontSize: 25,
-              )),
+          title:  Text('Alquinet',
+              style: Theme.of(context).textTheme.bodyText1),
           backgroundColor: const Color(0xFF1A1D2F),
           elevation: 0,
           actions: [

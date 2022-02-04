@@ -11,6 +11,6 @@ export 'package:alquinet/administracion/administration_screen.dart';
 export 'package:alquinet/administracion/pages/auth_page.dart';
 export 'package:alquinet/administracion/pages/forgot_password_page.dart';
 export 'package:alquinet/contratos/screens/home_screen_contratos.dart';
-
-
-
+export 'package:alquinet/routes/model/menu_opction.dart';
+export 'package:alquinet/contratos/screens/menu_option_screen.dart';
+export 'package:alquinet/contratos/screens/screens.dart';

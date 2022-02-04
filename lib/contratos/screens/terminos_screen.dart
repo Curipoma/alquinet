@@ -6,6 +6,7 @@ class TerminosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(actions: [],),
       body: CustomScrollView(
         slivers: [
           const _CustomAppBar(),

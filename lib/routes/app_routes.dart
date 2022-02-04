@@ -1,7 +1,6 @@
-import 'package:alquinet/contratos/screens/menu_option_screen.dart';
-import 'package:alquinet/routes/model/menu_opction.dart';
 import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
+
 
 // PRIMER NIVEL DE NAVEGACIÓN
 class MyRoutes {
@@ -15,7 +14,7 @@ class MyRoutes {
       ),
       icon: Icons.home_max_outlined,
     ),
-      MenuOpction(
+    MenuOpction(
       route: 'home',
       name: 'Home Screen',
       screen: const HomeScreen(
@@ -28,6 +27,32 @@ class MyRoutes {
       name: 'Interfaz Screen',
       screen: const InterfazScreen(),
       icon: Icons.home_max_outlined,
+    ),
+    MenuOpction(
+      route: 'homeContratos',
+      name: 'Visualizar Contrato',
+      screen: const HomeScreenContratos(
+        imageUrl: '',
+      ),
+      icon: Icons.assignment,
+    ),
+    MenuOpction(
+      route: 'homeComprobante',
+      name: 'Comprobante de pagos',
+      screen: const ComprobanteScreen(),
+      icon: Icons.fact_check_rounded,
+    ),
+    MenuOpction(
+      route: 'homeCatalogos',
+      name: 'Lista de precios',
+      screen: const ListaPreciosScreen(),
+      icon: Icons.apartment_rounded,
+    ),
+    MenuOpction(
+      route: 'homeTerminos',
+      name: 'Terminos y Condiciones',
+      screen: const TerminosScreen(),
+      icon: Icons.auto_stories_outlined,
     ),
   ];
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
