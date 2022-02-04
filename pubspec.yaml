@@ -85,6 +85,7 @@ flutter:
     - assets/images/fondo_seg.jpg
     - assets/images/seguimiento_casa.png
     - assets/images/coment.png
+    - assets/images/seguimiento_inquilino.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

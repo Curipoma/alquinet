@@ -78,7 +78,7 @@ class _ComentScreen extends State<ComentScreen> {
       ),
          body: CommentBox(
            userImage:
-               "assets/images/coment.jpg",
+               "assets/images/coment.png",
            child: commentChild(filedata),
            labelText: 'Escriba su comentario...',
            withBorder: false,
