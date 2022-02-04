@@ -14,7 +14,8 @@ class CustomCardTemp extends StatelessWidget {
       child: Column(
         children: [
           const FadeInImage(
-            image: NetworkImage('https://ocnmt.org/wp-content/uploads/2015/12/pagina-en-construccion.png'),
+            image: NetworkImage(
+                'https://ocnmt.org/wp-content/uploads/2015/12/pagina-en-construccion.png'),
             placeholder: AssetImage('assets/images/jar-loading.gif'),
             width: double.infinity,
             height: 230,
@@ -24,8 +25,11 @@ class CustomCardTemp extends StatelessWidget {
           Container(
             alignment: AlignmentDirectional.center,
             padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
-            child: const Text('Estamos trabajando, ¡No moleste!'),
-          )
+            child: Text(
+              'Estamos trabajando, ¡No moleste!',
+              style: TextStyle(color: Theme.of(context).backgroundColor),
+            ),
+          ),
         ],
       ),
     );

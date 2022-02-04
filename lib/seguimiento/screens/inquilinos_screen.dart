@@ -8,8 +8,13 @@ class InquilinosScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text('Arrendatarios', style: Theme.of(context).textTheme.bodyText1),
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
+        centerTitle: true,
+        title: Text(
+          'Arrendatarios',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
       ),
       body: Column(
         children: [

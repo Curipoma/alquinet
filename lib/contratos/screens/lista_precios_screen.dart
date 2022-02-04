@@ -8,10 +8,13 @@ class ListaPreciosScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         centerTitle: true,
-        title: Text('Alquinet', style: Theme.of(context).textTheme.bodyText1),
-        elevation: 0,
-        actions: [],
+        title: Text(
+          'Alquinet',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

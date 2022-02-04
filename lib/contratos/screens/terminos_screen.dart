@@ -6,7 +6,15 @@ class TerminosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [],),
+      appBar: AppBar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
+        centerTitle: true,
+        title: Text(
+          'Alquinet',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           const _CustomAppBar(),
@@ -106,7 +114,7 @@ class _Overview extends StatelessWidget {
         '• ESTACIONAMIENTO: El arrendamiento  puede incluir el estacionamiento mediante el pago de una cuota y/o una cantidad justa.\n\n'
         '• PRIVACIDAD : Se garantiza la privacidad de el ARRENDADOR en todos sus aspectos (información personal, detalles de pago, numero de celular , cuentas bancarias etc.) el ARRENDATARIO no podrá dar esta información salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales en caso de ello se tomara acciones en el ámbito legal.\n\n',
         textAlign: TextAlign.justify,
-        style: Theme.of(context).textTheme.subtitle1,
+        style: TextStyle(color: Theme.of(context).backgroundColor),
       ),
     );
   }

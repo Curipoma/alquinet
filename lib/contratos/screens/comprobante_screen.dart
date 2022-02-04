@@ -8,15 +8,13 @@ class ComprobanteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         centerTitle: true,
-        title: Text('Alquinet', style: Theme.of(context).textTheme.bodyText1),
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          )
-        ],
+        title: Text(
+          'Alquinet',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

@@ -46,8 +46,11 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendadores',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: Text(
+                            'Arrendadores',
+                            style: TextStyle(
+                                color: Theme.of(context).backgroundColor),
+                          ),
                         ),
                       ],
                     ),
@@ -81,8 +84,11 @@ class CustomerTracking extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendatarios',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: Text(
+                            'Arrendatarios',
+                            style: TextStyle(
+                                color: Theme.of(context).backgroundColor),
+                          ),
                         ),
                       ],
                     ),
@@ -110,14 +116,16 @@ class CustomerTracking extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         const Image(
-                          image: AssetImage(
-                              'assets/images/coment.png'),
+                          image: AssetImage('assets/images/coment.png'),
                           width: 200,
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Comentarios',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: Text(
+                            'Comentarios',
+                            style: TextStyle(
+                                color: Theme.of(context).backgroundColor),
+                          ),
                         ),
                       ],
                     ),

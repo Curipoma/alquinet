@@ -10,17 +10,13 @@ class HomeScreenContratos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         centerTitle: true,
         title: Text(
           'Alquinet',
-          style: Theme.of(context).textTheme.bodyText1),
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          )
-        ],
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
       ),
       body: GridView.count(
         padding: const EdgeInsets.all(20),
@@ -47,9 +43,9 @@ class HomeScreenContratos extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
+              Text(
                 'Contrato Departamento1',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               ),
             ],
           ),
@@ -72,9 +68,9 @@ class HomeScreenContratos extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
+              Text(
                 'Contrato Departamento2',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               ),
             ],
           ),
@@ -89,9 +85,9 @@ class HomeScreenContratos extends StatelessWidget {
                   height: 140,
                 ),
               ),
-              const Text(
+              Text(
                 "Contrato Departamento3",
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               )
             ],
           ),
@@ -106,9 +102,9 @@ class HomeScreenContratos extends StatelessWidget {
                   height: 140,
                 ),
               ),
-              const Text(
+              Text(
                 'Contrato Casa1 ',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               )
             ],
           ),
@@ -123,9 +119,9 @@ class HomeScreenContratos extends StatelessWidget {
                   height: 140,
                 ),
               ),
-              const Text(
+              Text(
                 'Contrato Casa2',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               )
             ],
           ),
@@ -140,9 +136,9 @@ class HomeScreenContratos extends StatelessWidget {
                   height: 140,
                 ),
               ),
-              const Text(
+              Text(
                 'Contrato casa3',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Theme.of(context).backgroundColor),
               )
             ],
           ),

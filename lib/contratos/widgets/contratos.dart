@@ -9,19 +9,13 @@ class Contrato1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         centerTitle: true,
-        title: const Text('Alquinet',
-            style: TextStyle(
-              fontSize: 25,
-            )),
-        backgroundColor: const Color(0xFF1A1D2F),
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          )
-        ],
+        title: Text(
+          'Alquinet',
+          style: TextStyle(color: Theme.of(context).primaryColor),
+        ),
       ),
       body: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
