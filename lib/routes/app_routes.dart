@@ -1,19 +1,50 @@
 import 'package:alquinet/contratos/screens/menu_option_screen.dart';
+import 'package:alquinet/routes/model/menu_opction.dart';
 import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
-class MyRoute {
-  final String nameText;
-  final Widget widget;
-  final IconData icon;
-  MyRoute({required this.nameText, required this.widget, required this.icon});
+// PRIMER NIVEL DE NAVEGACIÓN
+class MyRoutes {
+  static const initialRoute = 'home';
+  static final menuOptions = <MenuOpction>[
+    MenuOpction(
+      route: '/',
+      name: 'Home Screen',
+      screen: const HomeScreen(
+        title: 'Alquinet',
+      ),
+      icon: Icons.home_max_outlined,
+    ),
+      MenuOpction(
+      route: 'home',
+      name: 'Home Screen',
+      screen: const HomeScreen(
+        title: 'Alquinet',
+      ),
+      icon: Icons.home_max_outlined,
+    ),
+    MenuOpction(
+      route: 'interfaz',
+      name: 'Interfaz Screen',
+      screen: const InterfazScreen(),
+      icon: Icons.home_max_outlined,
+    ),
+  ];
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+    for (final option in menuOptions) {
+      appRoutes.addAll({option.route: (BuildContext context) => option.screen});
+    }
+    return appRoutes;
+  }
 }
 
-class AppRoutes {
+// SEGUNDO NIVEL DE NAVEGACIÓN
+class ChildrenRoutesHome {
   final List<MyRoute> appRoutes = [
     MyRoute(
         nameText: 'Alquinet',
-        widget: const HomeScreen(),
+        widget: const WelcomeScreen(),
         icon: Icons.house_outlined),
     MyRoute(
         nameText: 'Log user',

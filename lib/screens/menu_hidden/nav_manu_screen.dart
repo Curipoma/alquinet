@@ -1,16 +1,14 @@
-import 'package:alquinet/routes/app_routes.dart';
+import 'package:alquinet/providers/theme.dart';
+import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatefulWidget {
-  final Function position, logout, changeMode;
-  final bool stateMode;
+  final Function position;
   final String title;
   const MenuScreen({
     Key? key,
     required this.position,
-    required this.logout,
-    required this.stateMode,
-    required this.changeMode,
     required this.title,
   }) : super(key: key);
 
@@ -21,14 +19,14 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context);
+
     return Column(
       children: [
         Row(
-          // NAV HEAD
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 50.0, left: 20.0),
+              padding: const EdgeInsets.only(top: 50.0, left: 20.0),
               child: GestureDetector(
                 onTap: () => setState(() {
                   widget.position(0);
@@ -46,27 +44,23 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
         Flexible(
-          // NAV BODY
           child: ListView.builder(
-            itemCount: AppRoutes().appRoutes.length,
+            itemCount: ChildrenRoutesHome().appRoutes.length,
             itemExtent: 40.0,
             itemBuilder: (context, index) => ListTile(
-              onTap: () => setState(() {
-                widget.position(index);
-              }),
+              onTap: () => setState(() => widget.position(index)),
               leading: Icon(
-                AppRoutes().appRoutes[index].icon,
+                ChildrenRoutesHome().appRoutes[index].icon,
                 color: Theme.of(context).primaryColor,
               ),
               title: Text(
-                AppRoutes().appRoutes[index].nameText,
-                style: TextStyle(color: Theme.of(context).primaryColor),
+                ChildrenRoutesHome().appRoutes[index].nameText,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
           ),
         ),
         Padding(
-          // NAV FOTTER
           padding: const EdgeInsets.symmetric(vertical: 15.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -106,7 +100,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
               GestureDetector(
-                onTap: () => widget.logout(),
+                onTap: () {},
                 child: Row(
                   children: <Widget>[
                     Icon(
@@ -121,13 +115,14 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
               GestureDetector(
-                onTap: () => setState(() {
-                  widget.changeMode();
-                }),
+                onTap: () => {
+                  MyTheme.stateTheme = !MyTheme.stateTheme,
+                  theme.setTheme(MyTheme.getTheme()),
+                },
                 child: Row(
                   children: <Widget>[
                     Icon(
-                      widget.stateMode
+                      MyTheme.stateTheme
                           ? Icons.light_mode_outlined
                           : Icons.dark_mode_outlined,
                       color: Theme.of(context).primaryColor,
