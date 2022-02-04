@@ -11,11 +11,9 @@ class HomeScreenContratos extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Alquinet',
-            style: TextStyle(
-              fontSize: 25,
-            )),
-        backgroundColor: const Color(0xFF1A1D2F),
+        title: Text(
+          'Alquinet',
+          style: Theme.of(context).textTheme.bodyText1),
         elevation: 0,
         actions: [
           IconButton(

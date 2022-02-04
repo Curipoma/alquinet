@@ -53,6 +53,12 @@ class MyRoutes {
       screen: const TerminosScreen(),
       icon: Icons.auto_stories_outlined,
     ),
+    MenuOpction(
+      route: 'coments',
+      name: 'Coments',
+      screen: const ComentScreen(),
+      icon: Icons.auto_stories_outlined,
+    ),
   ];
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};

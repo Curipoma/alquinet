@@ -53,8 +53,9 @@ class _ComentScreen extends State<ComentScreen> {
                       color: Colors.blue,
                       borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: NetworkImage(data[i]['pic'] + "$i")),
+                    radius: 50,
+                    backgroundImage: NetworkImage(data[i]['pic'] + "$i"),
+                  ),
                 ),
               ),
               title: Text(
@@ -72,40 +73,40 @@ class _ComentScreen extends State<ComentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo[900],
-        title: const Text('Comentarios'),
+        title:
+            Text('Comentarios', style: Theme.of(context).textTheme.bodyText1),
       ),
-      body: CommentBox(
-        userImage:
-            "https://scontent.fuio21-1.fna.fbcdn.net/v/t39.30808-1/p240x240/271828939_1139892820081664_4734569930124435156_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeHegRF6Fwi7gMl1CIa0WeXTocUL7Xe9R0ihxQvtd71HSD8QdpxY8LlYGr2fHFJti_W4Q2ZtlHUjy9KniPu0-pcS&_nc_ohc=A4Zgo_SwrTEAX-zlDzA&_nc_ht=scontent.fuio21-1.fna&oh=00_AT9lHXyVJ7WquoGCg3XwlqDMekOLauHpgQ1DcaCKWQTv2w&oe=61EF6230",
-        child: commentChild(filedata),
-        labelText: 'Escriba su comentario...',
-        withBorder: false,
-        errorText: 'El espacio no se puede quedar en blanco',
-        sendButtonMethod: () {
-          if (formKey.currentState!.validate()) {
-            print(commentController.text);
-            setState(() {
-              var value = {
-                'name': 'Nuevo usuario',
-                'pic':
-                    'https://scontent.fuio21-1.fna.fbcdn.net/v/t39.30808-1/p240x240/271828939_1139892820081664_4734569930124435156_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeHegRF6Fwi7gMl1CIa0WeXTocUL7Xe9R0ihxQvtd71HSD8QdpxY8LlYGr2fHFJti_W4Q2ZtlHUjy9KniPu0-pcS&_nc_ohc=A4Zgo_SwrTEAX-zlDzA&_nc_ht=scontent.fuio21-1.fna&oh=00_AT9lHXyVJ7WquoGCg3XwlqDMekOLauHpgQ1DcaCKWQTv2w&oe=61EF6230',
-                'message': commentController.text
-              };
-              filedata.insert(0, value);
-            });
-            commentController.clear();
-            FocusScope.of(context).unfocus();
-          } else {
-            print("No validado");
-          }
-        },
-        formKey: formKey,
-        commentController: commentController,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        sendWidget: const Icon(Icons.send_sharp, size: 30, color: Colors.white),
-      ),
+      // body: CommentBox(
+      //   userImage:
+      //       "https://scontent.fuio21-1.fna.fbcdn.net/v/t39.30808-1/p240x240/271828939_1139892820081664_4734569930124435156_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeHegRF6Fwi7gMl1CIa0WeXTocUL7Xe9R0ihxQvtd71HSD8QdpxY8LlYGr2fHFJti_W4Q2ZtlHUjy9KniPu0-pcS&_nc_ohc=A4Zgo_SwrTEAX-zlDzA&_nc_ht=scontent.fuio21-1.fna&oh=00_AT9lHXyVJ7WquoGCg3XwlqDMekOLauHpgQ1DcaCKWQTv2w&oe=61EF6230",
+      //   child: commentChild(filedata),
+      //   labelText: 'Escriba su comentario...',
+      //   withBorder: false,
+      //   errorText: 'El espacio no se puede quedar en blanco',
+      //   sendButtonMethod: () {
+      //     if (formKey.currentState!.validate()) {
+      //       print(commentController.text);
+      //       setState(() {
+      //         var value = {
+      //           'name': 'Nuevo usuario',
+      //           'pic':
+      //               'https://scontent.fuio21-1.fna.fbcdn.net/v/t39.30808-1/p240x240/271828939_1139892820081664_4734569930124435156_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeHegRF6Fwi7gMl1CIa0WeXTocUL7Xe9R0ihxQvtd71HSD8QdpxY8LlYGr2fHFJti_W4Q2ZtlHUjy9KniPu0-pcS&_nc_ohc=A4Zgo_SwrTEAX-zlDzA&_nc_ht=scontent.fuio21-1.fna&oh=00_AT9lHXyVJ7WquoGCg3XwlqDMekOLauHpgQ1DcaCKWQTv2w&oe=61EF6230',
+      //           'message': commentController.text
+      //         };
+      //         filedata.insert(0, value);
+      //       });
+      //       commentController.clear();
+      //       FocusScope.of(context).unfocus();
+      //     } else {
+      //       print("No validado");
+      //     }
+      //   },
+      //   formKey: formKey,
+      //   commentController: commentController,
+      //   backgroundColor: Colors.black,
+      //   textColor: Colors.white,
+      //   sendWidget: const Icon(Icons.send_sharp, size: 30, color: Colors.white),
+      // ),
     );
   }
 }

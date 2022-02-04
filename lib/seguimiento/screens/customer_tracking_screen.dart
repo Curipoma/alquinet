@@ -1,3 +1,4 @@
+import 'package:alquinet/screens/screens.dart';
 import 'package:alquinet/seguimiento/screens/casas_screen.dart';
 import 'package:alquinet/seguimiento/screens/inquilinos_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +17,10 @@ class CustomerTracking extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(
-        children: [
-          Card(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
               margin: const EdgeInsets.all(30),
@@ -38,19 +40,22 @@ class CustomerTracking extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         const Image(
-                          image: AssetImage('assets/images/seguimiento_casa.png'),
+                          image:
+                              AssetImage('assets/images/seguimiento_casa.png'),
                           width: 200,
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendadores',style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: const Text('Arrendadores',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
                   ),
                 ),
-              )),
-          Card(
+              ),
+            ),
+            Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
               margin: const EdgeInsets.all(15),
@@ -70,19 +75,58 @@ class CustomerTracking extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         const Image(
-                          image: AssetImage('assets/images/seguimiento_inquilino.png'),
+                          image: AssetImage(
+                              'assets/images/seguimiento_inquilino.png'),
                           width: 200,
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: const Text('Arrendatarios',style: TextStyle(fontWeight: FontWeight.bold)),
+                          child: const Text('Arrendatarios',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ))
-        ],
+              ),
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              margin: const EdgeInsets.all(15),
+              elevation: 10,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ComentScreen(),
+                        ));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.8),
+                    child: Column(
+                      children: <Widget>[
+                        const Image(
+                          image: AssetImage(
+                              'assets/images/seguimiento_inquilino.png'),
+                          width: 200,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          child: const Text('Comentarios',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

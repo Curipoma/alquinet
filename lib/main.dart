@@ -14,9 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool stateMode = false;
-  void changeMode() => setState(() {
-        stateMode = !stateMode;
-      });
+  void changeMode() => setState(() => stateMode = !stateMode);
 
   @override
   Widget build(BuildContext context) {

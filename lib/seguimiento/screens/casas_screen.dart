@@ -8,8 +8,7 @@ class CasasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo[900],
-        title: const Text('Arrendadores'),
+        title: Text('Arrendadores', style: Theme.of(context).textTheme.bodyText1),
         ),
       body: Container(
       width: MediaQuery.of(context).size.width,

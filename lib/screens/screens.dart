@@ -15,3 +15,4 @@ export 'package:alquinet/routes/model/menu_opction.dart';
 export 'package:alquinet/contratos/screens/menu_option_screen.dart';
 export 'package:alquinet/contratos/screens/screens.dart';
 export 'package:alquinet/seguimiento/screens/customer_tracking_screen.dart';
+export 'package:alquinet/seguimiento/screens/coment_screen.dart';
