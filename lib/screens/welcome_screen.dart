@@ -36,8 +36,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const FadeInImage(
+                        children: const[
+                           FadeInImage(
                             width: 200.0,
                             height: 150.0,
                             image: AssetImage('assets/images/house_home_1.jpg'),

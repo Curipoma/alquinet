@@ -39,7 +39,7 @@ dependencies:
   google_fonts: ^2.1.0
   flutter_rating_bar: ^4.0.0
   comment_box: ^0.0.17
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,7 +82,9 @@ flutter:
     - assets/images_contratos/casa_5.jpg
     - assets/images_contratos/casa_6.jpg
     - assets/images_contratos/terminos_condiciones.png
-
+    - assets/images/fondo_seg.jpg
+    - assets/images/seguimiento_casa.png
+    - assets/images/seguimiento_inquilino.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

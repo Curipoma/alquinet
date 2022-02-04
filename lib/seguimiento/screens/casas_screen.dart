@@ -34,7 +34,7 @@ class CasasScreen extends StatelessWidget {
                   child: FadeInImage(
                     image: NetworkImage(
                         'https://media.istockphoto.com/photos/view-of-modern-house-in-australian-style-on-pine-forest-and-blue-sky-picture-id1166331518?k=20&m=1166331518&s=612x612&w=0&h=-9cDXPIuKNCWYjOJZTuD5XzmndnT0MWZ4MnvUvVrZck='),
-                    placeholder: AssetImage('assets/Images/jar-loading.gif'),
+                    placeholder: AssetImage('assets/images/jar-loading.gif'),
                     width: 300,
                     fit: BoxFit.cover,
                     fadeInDuration: Duration(milliseconds: 300),
