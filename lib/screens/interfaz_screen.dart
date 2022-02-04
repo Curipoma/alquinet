@@ -8,7 +8,7 @@ class InterfazScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [],
+        actions: const [],
         title: const Text('Alquinet'),
       ),
       backgroundColor: Theme.of(context).backgroundColor,

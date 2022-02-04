@@ -111,7 +111,7 @@ class CustomerTracking extends StatelessWidget {
                       children: <Widget>[
                         const Image(
                           image: AssetImage(
-                              'assets/images/seguimiento_inquilino.png'),
+                              'assets/images/coment.png'),
                           width: 200,
                         ),
                         Container(

@@ -84,7 +84,8 @@ flutter:
     - assets/images_contratos/terminos_condiciones.png
     - assets/images/fondo_seg.jpg
     - assets/images/seguimiento_casa.png
-    - assets/images/seguimiento_inquilino.png
+    - assets/images/coment.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
