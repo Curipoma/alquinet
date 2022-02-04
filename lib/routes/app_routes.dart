@@ -1,7 +1,6 @@
 import 'package:alquinet/screens/screens.dart';
 import 'package:flutter/material.dart';
 
-
 // PRIMER NIVEL DE NAVEGACIÓN
 class MyRoutes {
   static const initialRoute = 'home';
@@ -91,5 +90,10 @@ class ChildrenRoutesHome {
         nameText: 'Contratos',
         widget: const MenuOptionScreen(),
         icon: Icons.apartment_outlined),
+    MyRoute(
+      nameText: 'Customer Tracking',
+      widget: const CustomerTracking(),
+      icon: Icons.auto_stories_outlined,
+    ),
   ];
 }

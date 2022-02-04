@@ -14,3 +14,4 @@ export 'package:alquinet/contratos/screens/home_screen_contratos.dart';
 export 'package:alquinet/routes/model/menu_opction.dart';
 export 'package:alquinet/contratos/screens/menu_option_screen.dart';
 export 'package:alquinet/contratos/screens/screens.dart';
+export 'package:alquinet/screens/customer_tracking_screen.dart';
