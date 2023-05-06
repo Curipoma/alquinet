@@ -35,7 +35,7 @@ class _LogUserState extends State<LogUser> {
         ),
         MyCustomForm(
           fields: [
-                        Text(
+            Text(
               'Log users',
               style: Theme.of(context).textTheme.headline1,
             ),
